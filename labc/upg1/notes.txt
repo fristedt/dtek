@@ -1,0 +1,7 @@
+1.1 Se bilaga.
+1.2 gi lagras i BSS.
+1.3 in ligger i data.
+1.4 m ligger på stack.
+1.5 p ligger på stack.
+1.6 p pekar på en address i heap. 
+1.7 En instruktion som ligger i programkoden.

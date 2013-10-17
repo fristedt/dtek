@@ -1,0 +1,58 @@
+2.1 
+pointers.c:42:6: warning: assignment from incompatible pointer type [enabled by default]
+   cp = &val2; /* The compiler should warn you about this. */
+Detta varnar oss för vi tvingar char-pekaren cp peka på adressen till en integer.
+
+pointers.c:78:3: warning: overflow in implicit constant conversion [-Woverflow]
+   *cp = 1234; /* The compiler should warn you about this. */
+Detta varnar oss för att vi ändrar värdet som cp refererar till en char. Detta är inte okej eftersom char är en charpekare.
+
+pointers.c:122:6: warning: assignment from incompatible pointer type [enabled by default]
+   ip = ca; /* The compiler should warn you about this. */
+Detta varnar oss för vi tvingar int-pekaren ip peka på adressen av charen ca[0].
+
+pointers.c:132:6: warning: assignment from incompatible pointer type [enabled by default]
+   cp = ia; /* The compiler should warn you about this. */
+Detta varnar oss för vi försöker få char-pekaren cp att peka på adressen av integern ia[0].
+
+2.2
+På min dator reserveras 8 bytes för integerpekaren ip. Detta kontrollerades genom sizeof(ip).
+
+2.3 
+Innehållet i ip ska tolkas som adressen till ett heltal. 
+
+2.4
+Då avrefereras pekaren och värdet i minnesplatsen ip pekar på ändras till 1234.
+
+2.5 TODOLOLO
+.data
+.align 2
+ip: .word 0
+.text
+.align 2
+LDW r4, 0(ip) # Load adress of integer *ip.
+MOVI r5, 1234 # Put value 1234 in r5.
+STW r5, 0(r4) # Store the value of r5 at the adress of ip.
+
+2.6
+Adressen som ip pekar på ökas med storleken av en integer (4 byte på min dator).
+
+2.7
+8 bytes eller 64-bitar på min dator.
+
+2.8
+Det ska tolkas som adressen till en bokstav (char).
+
+2.9 TODO
+Då avrefereras pekaren och vi försöker lägger värdet 1234 på platsen cp pekar på. Eftersom 1234 är en int och *cp är en char kommer kompilatorn varna.
+
+2.10 TODO
+
+2.11
+Addressen som cp pekar på ökas med storleken av en char (1 byte på min dator).
+
+2.12
+En char är en byte stor på min dator. Detta för att den ska kunna representera samtliga ASCII värden.
+
+2.13
+När vi utför *cp = 1234 så försöker vi lägga in 10011010010 (11 bitar) på platsen av en char (8-bitar). Eftersom 

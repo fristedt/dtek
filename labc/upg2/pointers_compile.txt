@@ -1,0 +1,13 @@
+pointers.c: In function ‘main’:
+pointers.c:42:6: warning: assignment from incompatible pointer type [enabled by default]
+   cp = &val2; /* The compiler should warn you about this. */
+      ^
+pointers.c:78:3: warning: overflow in implicit constant conversion [-Woverflow]
+   *cp = 1234; /* The compiler should warn you about this. */
+   ^
+pointers.c:122:6: warning: assignment from incompatible pointer type [enabled by default]
+   ip = ca; /* The compiler should warn you about this. */
+      ^
+pointers.c:132:6: warning: assignment from incompatible pointer type [enabled by default]
+   cp = ia; /* The compiler should warn you about this. */
+      ^

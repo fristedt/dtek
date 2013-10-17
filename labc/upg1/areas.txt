@@ -1,0 +1,17 @@
+Message AM.01 from areas.c: Hello, World!
+AM.02: m: stored at 7fff7809347c (hex); value is 23456 (dec), 5ba0 (hex)
+AM.03: n: stored at 7fff78093478 (hex); value is 17 (dec), 11 (hex)
+AM.04: gi: stored at 600f90 (hex); value is 12345 (dec), 3039 (hex)
+AM.05: in: stored at 600f88 (hex); value is 4711 (dec), 1267 (hex)
+AM.06: fun: address is 400620 (hex)
+AM.07: main: address is 40067e (hex)
+AM.08: Executed p = (int *) malloc( sizeof( int ) );
+AM.09: p: stored at 7fff78093470 (hex); value is 30142480 (dec), 1cbf010 (hex)
+AM.09: p: stored at 7fff78093470 (hex); value is 30142512 (dec), 1cbf030 (hex)
+AM.10: Will soon execute n = fun( m );
+AF.1: loc1 stored at 7fff7809345c (hex); value is 23473 (dec), 5bb1 (hex)
+AF.2: parm stored at 7fff7809344c (hex); value is 23456 (dec), 5ba0 (hex)
+AF.3: Executed gi = parm;
+AM.11: Has now returned from n = fun( m );
+AM.12: n: stored at 7fff78093478 (hex); value is 23473 (dec), 5bb1 (hex)
+AM.13: gi: stored at 600f90 (hex); value is 23456 (dec), 5ba0 (hex)

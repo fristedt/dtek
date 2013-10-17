@@ -1,0 +1,8 @@
+govoid.c: In function ‘main’:
+govoid.c:56:11: warning: pointer of type ‘void *’ used in arithmetic [-Wpedantic]
+   vp = vp + 1; /* Add 1 to pointer. The compiler may warn you about this. */
+           ^
+govoid.c:69:3: warning: dereferencing ‘void *’ pointer [enabled by default]
+   *vp = 1234; /* The compiler should complain about this. */
+   ^
+govoid.c:69:3: error: invalid use of void expression

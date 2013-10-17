@@ -1,0 +1,60 @@
+Message PT.01 from pointers.c: Hello, pointy World!
+PT.02: val1: stored at 601878 (hex); value is 111111 (dec), 1b207 (hex)
+PT.03: val2: stored at 7fff54e22cac (hex); value is 2222222 (dec), 21e88e (hex)
+PT.04: ip: stored at 601928 (hex); value is 6297720 (dec), 601878 (hex)
+PT.05: sizeof(ip) == 8
+PT.06: Dereference pointer ip and we find: 111111 
+PT.07: sizeof(*ip) == 4
+PT.08: cp: stored at 6018a8 (hex); value is 140734617496748 (dec), 7fff54e22cac (hex)
+PT.09: sizeof(cp) == 8
+PT.10: Dereference pointer cp and we find: -114 
+PT.11: sizeof(*cp) == 1
+
+PT.12: Executed *ip = 1234; 
+PT.13: val1: stored at 601878 (hex); value is 1234 (dec), 4d2 (hex)
+PT.14: ip: stored at 601928 (hex); value is 6297720 (dec), 601878 (hex)
+PT.15: Dereference pointer ip and we find: 1234 
+
+PT.16: Executed *cp = 1234; 
+PT.17: val2: stored at 7fff54e22cac (hex); value is 2222290 (dec), 21e8d2 (hex)
+PT.18: cp: stored at 6018a8 (hex); value is 140734617496748 (dec), 7fff54e22cac (hex)
+PT.19: Dereference pointer cp and we find: -46 
+
+PT.20: Executed ip = ia; 
+PT.21: ia[0]: stored at 6018c0 (hex); value is 11 (dec), b (hex)
+PT.22: ia[1]: stored at 6018c4 (hex); value is 17 (dec), 11 (hex)
+PT.23: ip: stored at 601928 (hex); value is 6297792 (dec), 6018c0 (hex)
+PT.24: Dereference pointer ip and we find: 11 
+
+PT.25: Executed ip = ip + 1; 
+PT.26: ip: stored at 601928 (hex); value is 6297796 (dec), 6018c4 (hex)
+PT.27: Dereference pointer ip and we find: 17 
+
+PT.28: Executed cp = ca; 
+PT.29: ca[0]: stored at 601910 (hex); value is 11 (dec), b (hex)
+PT.30: ca[1]: stored at 601911 (hex); value is 17 (dec), 11 (hex)
+PT.31: ca[2]: stored at 601912 (hex); value is 3 (dec), 3 (hex)
+PT.32: ca[3]: stored at 601913 (hex); value is 0 (dec), 0 (hex)
+PT.33: cp: stored at 6018a8 (hex); value is 6297872 (dec), 601910 (hex)
+PT.34: Dereference pointer cp and we find: 11 
+
+PT.35: Executed cp = cp + 1; 
+PT.36: cp: stored at 6018a8 (hex); value is 6297873 (dec), 601911 (hex)
+PT.37: Dereference pointer cp and we find: 17 
+
+PT.38: Executed ip = ca; 
+PT.39: Dereference pointer ip and we find: 200971 
+
+PT.40: Executed ip = ip + 1; 
+PT.41: ip: stored at 601928 (hex); value is 6297876 (dec), 601914 (hex)
+PT.42: Dereference pointer ip and we find: 0 
+
+PT.43: Executed cp = ia; 
+PT.44: cp: stored at 6018a8 (hex); value is 6297792 (dec), 6018c0 (hex)
+PT.45: Dereference pointer cp and we find: 11 
+
+PT.46: fp: stored at 6018a0 (hex); value is 4195648 (dec), 400540 (hex)
+PT.47: Dereference fp and see what happens.
+Function fun called with parameter 42
+PT.48: Executed val1 = (*fp)(42); 
+PT.49: val1: stored at 601878 (hex); value is 43 (dec), 2b (hex)

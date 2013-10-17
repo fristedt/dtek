@@ -1,0 +1,4 @@
+void.c: In function ‘main’:
+void.c:56:11: warning: pointer of type ‘void *’ used in arithmetic [-Wpedantic]
+   vp = vp + 1; /* Add 1 to pointer. The compiler may warn you about this. */
+           ^

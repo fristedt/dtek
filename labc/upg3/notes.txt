@@ -1,0 +1,24 @@
+3.1 nej
+
+3.2 inkrement operationen för pekare är definierad som att
+flytta pekaren framåt samma mängd bytes som pekarens typ
+består av. eftersom void inte har en bestämd storlek
+varnar kompilatorn.
+
+3.3 kompilatorn varnar för vi avrefererar en voidpekare.
+anledningen till att vi inte kan avrefera en voidpekare är
+att kompilatorn inte vet hur stort block minne voidpekaren
+pekar på. den känner endast till startvärdet.
+
+3.4 Vi kan använda voidpekare för att kopiera ett block
+minne av vilken datatyp som helst. Det vi behöver är
+storleken av blocket, vilket är lätt att ta fram för
+arrayer. Fördelen med voidpekare är generaliteten; vi kan
+använda samma funktion för alla typer. Se exemplet memcpy. 
+
+3.5 Ett exempel är funktionen malloc. Malloc allokerar ett
+block minne och returnerar en voidpekare till minnet.
+Anledningen till att malloc använder just voidpekare är
+generaliteten; vi kan använda samma funktion för alla
+typer. 
+

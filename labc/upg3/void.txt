@@ -1,0 +1,25 @@
+Message VO.01 from void.c: Hello Void!
+VO.02: ia[0]: stored at 601280 (hex); value is 111111 (dec), 1b207 (hex)
+VO.03: ia[1]: stored at 601284 (hex); value is 17 (dec), 11 (hex)
+VO.04: ia[2]: stored at 601288 (hex); value is 123456 (dec), 1e240 (hex)
+VO.05: ip: stored at 6012c8 (hex); value is 6296200 (dec), 601288 (hex)
+VO.06: Dereference pointer ip and we find: 123456 
+VO.07: vp: stored at 601260 (hex); value is 6296192 (dec), 601280 (hex)
+
+VO.08: Executed cp = vp; 
+VO.09: cp: stored at 7fffecdb1648 (hex); value is 6296192 (dec), 601280 (hex)
+VO.10: Dereference pointer cp and we find: 7 
+
+VO.11: Executed ip = vp; 
+VO.12: ip: stored at 6012c8 (hex); value is 6296192 (dec), 601280 (hex)
+VO.13: Dereference pointer ip and we find: 111111 
+
+VO.14: Executed vp = vp + 1; 
+VO.15: vp: stored at 601260 (hex); value is 6296193 (dec), 601281 (hex)
+
+VO.16: Executed *ip = 4711; 
+VO.17: ip: stored at 6012c8 (hex); value is 6296192 (dec), 601280 (hex)
+VO.18: Dereference pointer ip and we find: 4711 
+VO.19: ia[0]: stored at 601280 (hex); value is 4711 (dec), 1267 (hex)
+
+VO.20: After // *vp = 1234; 
