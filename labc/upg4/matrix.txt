@@ -1,0 +1,56 @@
+
+ Examining imat:
+memory at: 600b80 contains value: 10000
+memory at: 600b84 contains value: 10001
+memory at: 600b88 contains value: 10002
+memory at: 600b8c contains value: 10003
+memory at: 600b90 contains value: 10100
+memory at: 600b94 contains value: 10101
+memory at: 600b98 contains value: 10102
+memory at: 600b9c contains value: 10103
+memory at: 600ba0 contains value: 10200
+memory at: 600ba4 contains value: 10201
+memory at: 600ba8 contains value: 10202
+memory at: 600bac contains value: 10203
+
+ Examining cmat:
+memory at: 600bb0 contains value: 0
+memory at: 600bb1 contains value: 1
+memory at: 600bb2 contains value: 2
+memory at: 600bb3 contains value: 3
+memory at: 600bb4 contains value: 10
+memory at: 600bb5 contains value: 11
+memory at: 600bb6 contains value: 12
+memory at: 600bb7 contains value: 13
+memory at: 600bb8 contains value: 20
+memory at: 600bb9 contains value: 21
+memory at: 600bba contains value: 22
+memory at: 600bbb contains value: 23
+
+ Examining dmat:
+memory at: 600bc0 contains value: 1.000000
+memory at: 600bc8 contains value: 1.000100
+memory at: 600bd0 contains value: 1.000200
+memory at: 600bd8 contains value: 1.000300
+memory at: 600be0 contains value: 1.010000
+memory at: 600be8 contains value: 1.010100
+memory at: 600bf0 contains value: 1.010200
+memory at: 600bf8 contains value: 1.010300
+memory at: 600c00 contains value: 1.020000
+memory at: 600c08 contains value: 1.020100
+memory at: 600c10 contains value: 1.020200
+memory at: 600c18 contains value: 1.020300
+
+ Examining rmat:
+memory at: 600c20 contains value: 0
+memory at: 600c24 contains value: 0
+memory at: 600c28 contains value: 0
+memory at: 600c2c contains value: 0
+memory at: 600c30 contains value: 0
+memory at: 600c34 contains value: 0
+memory at: 600c38 contains value: 0
+memory at: 600c3c contains value: 0
+memory at: 600c40 contains value: 0
+memory at: 600c44 contains value: 0
+memory at: 600c48 contains value: 0
+memory at: 600c4c contains value: 0

@@ -1,0 +1,2 @@
+8.2 Ja, den återanvänder minnesadressen som g-count använder lite då och då.
+8.3 Ja, mina adresser är alltid delbara med 16.

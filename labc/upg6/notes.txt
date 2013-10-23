@@ -1,0 +1,19 @@
+6.1 s1.v1 ligger precis före s1.v2.  
+
+6.3 Ja, mellan nes.c2 och nes.z. Kompilatorn "paddar" mellan
+vissa subtyper för att behålla en vettig struktur på
+structen. I vårt fall paddar den för att hålla bokstäverna
+c1 och c2 i ett ord, och paddar resterande två bytes innan
+den placerar (nes.z).v1.
+
+6.5 Innan ipp = ipp + 1 så pekar ipp på det första elementet
+i ipa, alltså, den första structen i en array av structs.
+Efter ipp = ipp + 1 pekar ipp på den andra structen i
+arrayen ipa. ipp = ipp + 1 har samma innebörd som ipp = ipp
++ sizeof(struct ipair).
+
+6.6 Samma här som ovan. nesp = nesp + 1 är ekvivalent med
+nesp = nesp + sizeof(struct nested).
+
+6.7 Nej. De deklareras i ordningen ipa, s1, na men ligger i
+minnet enligt ordningen nes, ipa, s1.

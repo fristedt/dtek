@@ -1,0 +1,139 @@
+1.1 Se bilaga.
+1.2 gi lagras i BSS.
+1.3 in ligger i data.
+1.4 m ligger på stack.
+1.5 p ligger på stack.
+1.6 p pekar på en address i heap. 
+1.7 En instruktion som ligger i programkoden.
+
+2.1 
+pointers.c:42:6: warning: assignment from incompatible pointer type [enabled by default]
+   cp = &val2; /* The compiler should warn you about this. */
+Detta varnar oss för vi tvingar char-pekaren cp peka på adressen till en integer.
+
+pointers.c:78:3: warning: overflow in implicit constant conversion [-Woverflow]
+   *cp = 1234; /* The compiler should warn you about this. */
+Detta varnar oss för att vi ändrar värdet som cp refererar till en char. Detta är inte okej eftersom char är en charpekare.
+
+pointers.c:122:6: warning: assignment from incompatible pointer type [enabled by default]
+   ip = ca; /* The compiler should warn you about this. */
+Detta varnar oss för vi tvingar int-pekaren ip peka på adressen av charen ca[0].
+
+pointers.c:132:6: warning: assignment from incompatible pointer type [enabled by default]
+   cp = ia; /* The compiler should warn you about this. */
+Detta varnar oss för vi försöker få char-pekaren cp att peka på adressen av integern ia[0].
+
+2.2
+På min dator reserveras 8 bytes för integerpekaren ip. Detta kontrollerades genom sizeof(ip).
+
+2.3 
+Innehållet i ip ska tolkas som adressen till ett heltal. 
+
+2.4
+Då avrefereras pekaren och värdet i minnesplatsen ip pekar på ändras till 1234.
+
+2.5
+.data
+.align 2
+ip: .word 0
+.text
+.align 2
+movia r16, ip       #r16 := adressen till ip.
+ldw r17, h(r16)     #r17 := värdet på adressen ip (en adress)
+movia r19, 1234     #r19 := värdet 1234.
+stw r19, 0(r17)     #värdet 1234 lagras i minnet på adressen r16 pekar på.
+
+2.6
+Adressen som ip pekar på ökas med storleken av en integer (4 byte på min dator).
+
+2.7
+8 bytes eller 64-bitar på min dator.
+
+2.8
+Det ska tolkas som adressen till en bokstav (char).
+
+2.9
+Eftersom pekaren cp är en char-pekare kommer värdet 1234 castas till en char.
+En char är 1 byte stor vilket gör att enbart första byten av 1234 kommer bevaras.
+Denna byte motsvarar -46 på little-endian.
+
+2.10
+.data
+.align 2
+cp: .word 0
+.text
+.align 2
+movia r16, cp       #r16 := adressen till cp.
+ldw r17, h(r16)     #r17 := värdet på adressen ip (en adress)
+movia r19, -44      #r19 := värdet -44.
+stb r19, 0(r17)     #värdet 1234 lagras i minnet på adressen r16 pekar på.
+
+2.11
+Addressen som cp pekar på ökas med storleken av en char (1 byte på min dator).
+
+2.12
+En char är en byte stor på min dator. Detta för att den ska kunna representera samtliga ASCII värden.
+
+2.13
+När vi utför *cp = 1234 så försöker vi lägga in 10011010010 (11 bitar) på platsen av en char (8-bitar). Eftersom 
+3.1 nej
+
+3.2 inkrement operationen för pekare är definierad som att
+flytta pekaren framåt samma mängd bytes som pekarens typ
+består av. eftersom void inte har en bestämd storlek
+varnar kompilatorn.
+
+3.3 kompilatorn varnar för vi avrefererar en voidpekare.
+anledningen till att vi inte kan avrefera en voidpekare är
+att kompilatorn inte vet hur stort block minne voidpekaren
+pekar på. den känner endast till startvärdet.
+
+3.4 Vi kan använda voidpekare för att kopiera ett block
+minne av vilken datatyp som helst. Det vi behöver är
+storleken av blocket, vilket är lätt att ta fram för
+arrayer. Fördelen med voidpekare är generaliteten; vi kan
+använda samma funktion för alla typer. Se exemplet memcpy. 
+
+3.5 Ett exempel är funktionen malloc. Malloc allokerar ett
+block minne och returnerar en voidpekare till minnet.
+Anledningen till att malloc använder just voidpekare är
+generaliteten; vi kan använda samma funktion för alla
+typer. 
+
+4.1 Ja, i alla fall på min dator. Det finns dock ingen
+garanti för det.
+
+4.2 Ja, det gör de. När en array initialiseras allokeras
+ett sekventiellt block minne. Annars skulle vi inte kunna
+inkrementera en pekare för att röra oss i arrayen.
+
+4.3 Ja, de ligger nära varandra, men inte precis efter
+varandra. Det finns tre element mellan de två heltalen.
+
+4.4 Row-major order. Alltså, indexen ökar i stil med [0,
+0], [0, 1], [0, 2], [0, 3], [1, 0], [1, 1], ..., [2, 3].
+ 
+4.5 offset = antal_kolumner * rad_index + kolumn_index
+    index = start_index + offset
+6.1 s1.v1 ligger precis före s1.v2.  
+
+6.3 Ja, mellan nes.c2 och nes.z. Kompilatorn "paddar" mellan
+vissa subtyper för att behålla en vettig struktur på
+structen. I vårt fall paddar den för att hålla bokstäverna
+c1 och c2 i ett ord, och paddar resterande två bytes innan
+den placerar (nes.z).v1.
+
+6.5 Innan ipp = ipp + 1 så pekar ipp på det första elementet
+i ipa, alltså, den första structen i en array av structs.
+Efter ipp = ipp + 1 pekar ipp på den andra structen i
+arrayen ipa. ipp = ipp + 1 har samma innebörd som ipp = ipp
++ sizeof(struct ipair).
+
+6.6 Samma här som ovan. nesp = nesp + 1 är ekvivalent med
+nesp = nesp + sizeof(struct nested).
+
+6.7 Nej. De deklareras i ordningen ipa, s1, na men ligger i
+minnet enligt ordningen nes, ipa, s1.
+
+8.2 Ja, den återanvänder minnesadressen som g-count använder lite då och då.
+8.3 Ja.

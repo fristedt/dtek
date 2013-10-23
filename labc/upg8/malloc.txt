@@ -1,0 +1,26 @@
+Compiled with -O
+
+Message MA01 from malloc.c: Hello, memory-allocating World!
+MA02: Main array successfully allocated, with size 48 bytes.
+MA03: Main array malloc returned address 25858064 (dec), 18a9010 (hex).
+MA04: Main array now contains the following string:
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstu
+g-count successfully allocated, with size 4 bytes.
+g-count malloc returned address 25858128 (dec), 18a9050 (hex).
+Number of g's in array is 2.
+Executed free( gcountp );
+MA05: Cowabunga array successfully allocated, with size 11 bytes.
+MA06: Cowabunga array malloc returned address 25858128 (dec), 18a9050 (hex).
+MA07: Cowabunga array now contains the following string: Cowabunga!
+MA08: Main array now contains the following string:
+Cowabunga!
+g-count successfully allocated, with size 4 bytes.
+g-count malloc returned address 25858160 (dec), 18a9070 (hex).
+Number of g's in array is 1.
+Executed free( gcountp );
+MA09: Executed free( arrayp );
+g-count successfully allocated, with size 4 bytes.
+g-count malloc returned address 25858160 (dec), 18a9070 (hex).
+Number of g's in array is 1.
+Executed free( gcountp );
+MA10: Executed free( extrap );

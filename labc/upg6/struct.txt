@@ -1,0 +1,51 @@
+Message ST.01 from struct.c: Hello, structured World!
+ST.02: s1: stored at 60162c (hex), sizeof(s1) is 8 (dec)
+ST.03: s1.v1 at 60162c (hex) contains 11 (dec), b (hex)
+ST.04: s1.v2 at 601630 (hex) contains 17 (dec), 11 (hex)
+
+ST.05: Executed ipp = &s1;
+ST.06: ipp: stored at 7fffb6c96e28 (hex), contains 6297132 (dec), 60162c (hex)
+ST.07: Dereference pointer ipp and we find: (*ipp).v1=11, (*ipp).v2=17
+ST.08: Dereference with different syntax: ipp->v1=11, ipp->v2=17
+
+ST.09: Executed (*ipp).v1 = nes.val;
+ST.10: Executed ipp -> v2 = 4711;
+ST.11: Dereference pointer ipp and we find: (*ipp).v1=17, (*ipp).v2=4711
+
+ST.12: Initialized ipa.
+ST.13: Memory at 6015a0 (hex) contains 1000
+ST.14: Memory at 6015a4 (hex) contains 2000
+ST.15: Memory at 6015a8 (hex) contains 1001
+ST.16: Memory at 6015ac (hex) contains 2001
+ST.17: Memory at 6015b0 (hex) contains 1002
+ST.18: Memory at 6015b4 (hex) contains 2002
+
+ST.23: Executed ipp = ipa;
+ST.24: ipp: stored at 7fffb6c96e28 (hex), contains 6296992 (dec), 6015a0 (hex)
+ST.25: Dereference pointer ipp and we find: ipp->v1=1000, ipp->v2=2000
+
+ST.26: Executed ipp = ipp + 1;
+ST.27: ipp: stored at 7fffb6c96e28 (hex), contains 6297000 (dec), 6015a8 (hex)
+ST.28: Dereference pointer ipp and we find: ipp->v1=1001, ipp->v2=2001
+
+ST.29: nes: stored at 601540 (hex), sizeof(nes) is 36 (dec)
+ST.30: nes.val at 601540 (hex) contains 17 (dec), 11 (hex)
+ST.31: nes.c1 at 601544 (hex) contains 'Q', 81 (dec), 51 (hex)
+ST.32: nes.c2 at 601545 (hex) contains 'Z', 90 (dec), 5a (hex)
+ST.33: nes.z: stored at 601548 (hex)
+ST.34: (nes.z).v1 at 601548 (hex) contains 117 (dec), 75 (hex)
+ST.35: (nes.z).v2 at 60154c (hex) contains 217 (dec), d9 (hex)
+ST.36: nes.str1 at 601550 (hex) contains: Hello!
+ST.37: nes.str2 at 601557 (hex) contains: Goodbye!
+
+ST.38: Executed na[0] = nes;
+
+ST.39: Executed nesp = &na;
+ST.40: nesp: stored at 7fffb6c96e20 (hex); contains 6297024 (dec), 6015c0 (hex)
+ST.41: Dereference pointer nesp and we find: nesp->val=17, and...
+ST.42: nesp->c1='Q', (*nesp).c2='Z', and...
+ST.43: (nesp->z).v1=117,(nesp->z).v2=217, and...
+ST.44: nesp->str1="Hello!" (*nesp).str2="Goodbye!"
+
+ST.43: Executed nesp = nesp + 1;
+ST.44: nesp: stored at 7fffb6c96e20 (hex); contains 6297060 (dec), 6015e4 (hex)

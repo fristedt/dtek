@@ -1,0 +1,15 @@
+4.1 Ja, i alla fall på min dator. Det finns dock ingen
+garanti för det.
+
+4.2 Ja, det gör de. När en array initialiseras allokeras
+ett sekventiellt block minne. Annars skulle vi inte kunna
+inkrementera en pekare för att röra oss i arrayen.
+
+4.3 Ja, de ligger nära varandra, men inte precis efter
+varandra. Det finns tre element mellan de två heltalen.
+
+4.4 Row-major order. Alltså, indexen ökar i stil med [0,
+0], [0, 1], [0, 2], [0, 3], [1, 0], [1, 1], ..., [2, 3].
+ 
+4.5 offset = antal_kolumner * rad_index + kolumn_index
+    index = start_index + offset
