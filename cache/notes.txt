@@ -47,7 +47,7 @@ verkligen motsvarar det sökta värdet i minnet.
 Antalet bitar som inte används till tag kommer att behova ökas, eftersom vi nu
 kommer behova 8 bitar för att peka ut en given byte i cachen ty 256 bytes = 2^8
 bytes. Byte-offset lär bli oförändrad eftersom blockstorleken är orörd. Antalet
-indexbitar kommer behöva ökas till 5 eftersom 8 (antalet icke-tag bitar) - 3
+indexbitar kommer behöva ökas till 5 eftersom 8 (antalet icke-tagbitar) - 3
 (byte-offset bitar) = 5. Det innebär att antalet rader kommer bli 2^5 = 32. Vårt
 tagfält kommer att använda resterande bitar; 32 - 8 = 24.
 
@@ -68,7 +68,7 @@ går till taggen.
 
 1.7
 Vi kommer få 4 rutor som delar på den totala storleken. Varje ruta kommer däför
-rymma 64 / 4 = 16 bytes. Antalet icke-tag bitar kommer att bli 4, eftersom varje
+rymma 64 / 4 = 16 bytes. Antalet icke-tagbitar kommer att bli 4, eftersom varje
 ruta kommer rymma 16 olika bytes och vi vill kunna peka ut samtliga. Eftersom vi
 fortfarande har blockstorlek 8 behöver vi fortfarande 3 bitar till byte-offset.
 Därför måste antalet indexbitar bli 1. Antalet bitar till taggen kommer att bli
@@ -167,3 +167,173 @@ blir därför 30+10 = 40 processorklockcykler.
 
 Medeltiden för att läsa ett ord till data cachen blir därför 40 / 2 = 20
 processorklockcykler. Därför är vår access time 20.
+
+5.5
+Blockstorlek: 8 byte.
+Byte-offset: 3 bitar.
+Antal icke-tagbitar: Varierar från 6 till 12 bitar.
+Index: Varierar från 3 till 9 bitar.
+Rader: Varierar från 2^3 till 2^9, alltså 8 till 512.
+
+Storlek    | 64 | 128 | 256 | 512 | 1024 | 2048 | 4096 |
+Indexbitar |  3 |   4 |   5 |   6 |    7 |    8 |    9 |
+
+------------------------------------
+|Tag        |Index    |Byte-offset | x 8 - 512
+|20-26 bitar|3-9 bitar|3 bitar     |   
+------------------------------------
+
+Varje block rymmer 2 heltal.
+
+Antag att a[0][0] ligger på minnesplats 0. Adresserna nedan är trunkerade till
+endast icke-tag bitarna.
+
+Cachestorlekar 64 till 1024 bytes.
+1. Adress: ... 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0
+2. Adress: ... 0100 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 0
+3. Adress: ... 1000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 0
+4. Adress: ... 0000 0000 0100, Läs   a[1][0]   MISS, hämta block till rad 0
+5. Adress: ... 0100 0000 0100, Läs   b[1][0]   MISS, hämta block till rad 0
+6. Adress: ... 1000 0000 0100, Skriv res[1][0] MISS, hämta block till rad 0
+7. Adress: ... 0000 0000 1000, Läs   a[2][0]   MISS, hämta block till rad 1
+8. Adress: ... 0100 0000 1000, Läs   b[2][0]   MISS, hämta block till rad 1
+9. Adress: ... 1000 0000 1000, Skriv res[2][0] MISS, hämta block till rad 1
+10. ...
+
+Vi ser i tabellen ovan att a, b, och res använder minnesrymder vars adresser
+har en differens på 1024 bitar. Vi vet också att vi läser eller skriver från
+minnet i ordningen a -> b -> res -> a. Det innebär att för alla cacheminnen med
+en storlek under 2048 bytes så kommer varje operation att skriva över den
+föregående blockhämtningen i cachen, eftersom a[i][j] kommer dela index med
+b[i][j] och res[i][j]. 
+
+Cachestorlek 2056 bytes.
+1.  Adress: ... 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0
+2.  Adress: ... 0100 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 128
+3.  Adress: ... 1000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 0
+4.  Adress: ... 0000 0000 0100, Läs   a[1][0]   MISS, hämta block till rad 0
+5.  Adress: ... 0100 0000 0100, Läs   b[1][0]   HIT, läs från rad 128
+6.  Adress: ... 1000 0000 0100, Skriv res[1][0] MISS, hämta block till rad 0
+7.  Adress: ... 0000 0000 1000, Läs   a[2][0]   MISS, hämta block till rad 1
+8.  Adress: ... 0100 0000 1000, Läs   b[2][0]   MISS, hämta block till rad 129
+9.  Adress: ... 1000 0000 1000, Skriv res[2][0] MISS, hämta block till rad 1
+10  Adress: ... 0000 0000 1100, Läs   a[3][0]   MISS, hämta block till rad 1
+12. Adress: ... 0100 0000 1100, Läs   b[3][0]   HIT, läs från rad 129
+13. Adress: ... 1000 0000 1100, Skriv res[3][0] MISS, hämta block till rad 1
+14. Adress: ... 0000 0001 0000, Läs   a[4][0]   MISS, hämta block till rad 2
+15. Adress: ... 0100 0001 0000, Läs   b[4][0]   MISS, hämta block till rad 130
+16. Adress: ... 1000 0001 0000, Skriv res[4][0] MISS, hämta block till rad 2
+17. Adress: ... 0000 0001 0100, Läs   a[5][0]   MISS, hämta block till rad 2
+18. Adress: ... 0100 0001 0100, Läs   b[5][0]   HIT, läs från rad 130
+19. Adress: ... 1000 0001 0100, Skriv res[5][0] MISS, hämta block till rad 2
+
+Om vi ökar cachens storlek till 2048 bytes så kommer vi dock att behöva fler
+indexbitar för att hålla reda på alla rader, vilket medför att a[i][j] och
+b[i][j] får olika radindex. Tyvärr kommer a[i][j] och res[i][j] fortfarande
+dela radindex. Vi ser i tabellen ovan att 1 av 6 operationer ger träff i
+cachen, vilket ger oss en hit rate på ungefär 17%.
+
+Cachestorlek 4096 bytes.
+1.  Adress: ... 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0
+2.  Adress: ... 0100 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 128
+3.  Adress: ... 1000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 256
+4.  Adress: ... 0000 0000 0100, Läs   a[1][0]   HIT, läs från rad 0
+5.  Adress: ... 0100 0000 0100, Läs   b[1][0]   HIT, läs från rad 128
+6.  Adress: ... 1000 0000 0100, Skriv res[1][0] HIT, läs från rad 256
+
+Om vi ökar cachens storlek ytterligare till 4096 bytes så kommer vi få ännu
+bättre hit rate. Nu kommer läsning av a[i][j] hamna på rad 0-127, läsning av
+b[i][j] hama på rad 128-255 och skrivning till res hamna på rad 256-511.
+Mönstret i tabellen kommer fortsätta vilket ger oss en hit rate på 50%.
+
+5.6
+Se 5.5.
+
+5.8
+Storlek: 512 byte.
+Blockstorlek: 16 byte.
+Rutstorlek: 512 / 4 = 128 byte.
+Icke-tagbitar: 7 bitar, eftersom 128 = 2^7.
+Byte-offset: 4, eftersom 16 = 2^4.
+Index: 3 bitar, eftersom 7 - 4 = 3.
+Tag: 25 bitar, eftersom 32 - 7 = 25.
+Rader: 8 rader, eftersom 2^3 = 8.
+
+Validbitar finns i varje block, men dessa ritades inte ut på grund av
+platsbrist.
+
+BO: Byte-offset
+I: Index
+
+--------------- --------------- --------------- ---------------
+|Tag     |I|BO| |Tag     |I|BO| |Tag     |I|BO| |Tag     |I|BO| x 8 rader
+|25 bitar|3|4 | |25 bitar|3|4 | |25 bitar|3|4 | |25 bitar|3|4 |
+--------------- --------------- --------------- ---------------
+
+5.9
+Antag att a[0][0] ligger på minnesplats 0. Adresserna nedan är trunkerade till
+endast icke-tag bitarna.
+1. Adress: 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0, ruta 0
+2. Adress: 0100 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 0, ruta 1
+3. Adress: 1000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 0, ruta 2
+4. Adress: 0000 0000 0100, Läs   a[1][0]   MISS, hämta block till rad 0, ruta 3
+5. Adress: 0100 0000 0100, Läs   b[1][0]   MISS, hämta block till rad 0, ruta 0
+
+Eftersom indexbitarna är orörda för alla operationer ovan kommer alla
+operationer ovan använda samma rad i cachen. Det innebär att varje operation
+kommer att vilja skriva på rad 0, och det enda som kan variera är vilken ruta
+som ska användas. Eftersom vi bara har 4 rutor i cachen och vi använder LRU
+kommer den femte operationen skriva över det som den första operationen skrev
+till cachen.
+
+Svar: b[1][0] skriver över a[0][0].
+
+5.10
+För associativitetstal 1 är anledningen att varje cachmiss kommer att orsaka en
+överskrivning av det föregående som skrevs/laddning till cachen. Se 5.5 för
+detaljer; den ända skillnaden är att vi har större blockstorlek, men det
+hjälper tyvärr inte. 
+
+Situationen är nästan identisk med associativitetstal 4. Efter den fjärde
+operationen kommer samtliga operationer att skriva över något i cachen. Se 5.9
+för detaljer.
+
+5.11
+Byte-offset: 3 bitar, eftersom 8 = 2^3.
+
+Storlek    | 64 | 128 | 256 | 512 | 1024 | 2048 | 4096 |
+Indexbitar |  3 |   4 |   5 |   6 |    7 |    8 |    9 |
+
+Antag att a[0][0] ligger på adress 0. Adresserna är trunkerade till endast
+icke-tag bitarna.
+
+Cachestorlekar 64 till 1024 bytes. 
+1. Adress: 0000 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0
+2. Adress: 0100 0000 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 0
+3. Adress: 1000 0000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 0
+4. Adress: 0000 0000 0000 0001, Läs   a[0][1]   MISS, hämta block till rad 0
+5. Adress: 0100 0000 0000 0001, Läs   b[0][1]   MISS, hämta block till rad 0
+6. Adress: 1000 0000 0000 0001, Skriv res[0][1] MISS, hämta block till rad 0
+
+Cachestorlek 2048. 
+1. Adress: 0000 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0
+2. Adress: 0100 0000 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 128
+3. Adress: 1000 0000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 0
+4. Adress: 0000 0000 0000 0001, Läs   a[0][1]   MISS, hämta block till rad 0
+5. Adress: 0100 0000 0000 0001, Läs   b[0][1]   HIT, läs från rad 128
+6. Adress: 1000 0000 0000 0001, Skriv res[0][1] MISS, hämta block till rad 0
+
+Cachestorlek 4096 bytes.
+1.  Adress: ... 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0
+2.  Adress: ... 0100 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 128
+3.  Adress: ... 1000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 256
+4.  Adress: ... 0000 0000 0001, Läs   a[1][0]   HIT, läs från rad 0
+5.  Adress: ... 0100 0000 0001, Läs   b[1][0]   HIT, läs från rad 128
+6.  Adress: ... 1000 0000 0001, Skriv res[1][0] HIT, läs från rad 256
+
+Situationen är nästan identisk med 5.5/5.6.  Skillnaden är alla operationer
+kommer fortsätta skriva på samma rader som tidigare istället för att öka
+radnummer med 1 var sjätte operation.
+
+5.12 
+Samma förklaring som 5.5/5.6.
