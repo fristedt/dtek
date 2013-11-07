@@ -79,6 +79,8 @@ Därför måste antalet indexbitar bli 1. Antalet bitar till taggen kommer att b
 | |28 bitar |1 bitar  |3 bitar    |  | |28 bitar |1 bitar  |3 bitar    |
 -----------------------------------  -----------------------------------
 
+================================================================================
+
 2.1
 Instruktionscacheminnet.
 
@@ -97,4 +99,71 @@ Du behöver aldrigt skriva till instruktionscacheminnet eftersom när programmet
 undantag till detta är självmodifierande kod, men det används inte tillräckligt
 ofta för att justifiera speciella åtgärder vid designen av cacheminnet.
 
+================================================================================
 
+3
+Nummer 3: 5553 / 283 ~= 19.62
+Nummer 4: 7508 / 283 ~= 26.53
+
+3.1
+Instruktioner till simulatorn är 32 bitar = 4 bytes. Om cachen är 64 bytes
+kommer alltså 16 instruktioner rymmars i cachen. Vi vet också att vår loop
+kräver 18 instruktioner. Den ryms alltså inte i cachen och det är troligtvis
+därför vi får så låg hit rate.
+
+3.2
+Nummer 2 och nummer 5. Nummer 5 har lägre körtid än nummer 2, men eftersom deras
+hit rate i instruktionscacheminnet är samma måste minskningen av körtid komma
+från andra håll.
+
+3.3
+Eftersom hela loopen ryms redan då instruktionscachen har storlek 4 * 18 = 72
+bytes så ger ytterligare storleksökningar ingen förbättrad hit rate. 
+
+================================================================================
+
+4.1
+Nej, eftersom samma instruktion inte utförs flera gånger.
+
+4.2
+Ja, programmet har bra rumslokalitet eftersom varje instruktion ligger precis
+efter den föregående i minnet. Det innebär att när cacheminnet hämtar ett block
+från minnet kommer cachen att få flera cacheträffar som följd.
+
+4.3
+När första instruktionen hämtas kommer det givetvis att bli en cachemiss. Då
+hämtas ett block med storlek 8 bytes. 8 bytes rymmer två instruktioner. Nästa
+instruktion som hämtas kommer därför att finnas i cachen. Efter det blir det
+miss igen eftersom endast två instruktioner hämtades. Programmets hit rate bör
+därför bli 50%.
+
+================================================================================
+
+5.1
+Kolumnindex.
+
+5.2
+Instruktionscachen har en så hög hit rate eftersom den största delen av
+programmet består av loopar; programmet visar hög tidslokalitet för
+instruktioncachen. Datacachen har en så låg hit rate eftersom vi inte använder
+samma adress i minnet varje iteration; dålig tidslokalititet. 
+
+5.3
+Instruktionscachen har en så hög hit rate eftersom nästan hela programmet består
+av loopar. Strcpy hade också loopar men inte till samma grad som matris.
+
+5.4
+Eftersom simulatorn inte kan hantera olika accesstider för instruktioncachen
+och datacachen måste vi anpassa vår access time efter den cache som har flest
+missar. Eftersom instruktioncachen har en hit rate på 100% och datacachen har en
+hit rate på 1% måste vi givetvis ställa access time efter vår datacache.
+
+Datacachen har en blockstorlek på 2 ord. Att läsa det första ordet kommer att ta
+3 processorklockcykler. Det andra ordet kommer att ta 1 processorklockcykel.
+Enligt antaganden i labbinstruktionerna så arbetar vi med en processor med
+klockfrekvens 2GHz och ett primärminne med 2MHz. Alltså arbetar processorn 10
+gånger snabbare än primärminnet. Den totala tiden det kommer ta att läsa 2 ord
+blir därför 30+10 = 40 processorklockcykler.
+
+Medeltiden för att läsa ett ord till data cachen blir därför 40 / 2 = 20
+processorklockcykler. Därför är vår access time 20.
