@@ -78,3 +78,23 @@ Därför måste antalet indexbitar bli 1. Antalet bitar till taggen kommer att b
 |V|Tag      |Index    |Byte-offset|  |V|Tag      |Index    |Byte-offset| x 2
 | |28 bitar |1 bitar  |3 bitar    |  | |28 bitar |1 bitar  |3 bitar    |
 -----------------------------------  -----------------------------------
+
+2.1
+Instruktionscacheminnet.
+
+2.2
+Instruktionscacheminnet.
+
+2.3
+För att få mätvärden som är så bra som möjligt bör du räkna ut vilket
+cacheminne som har flest missar multiplicerat med antalet klockcykler en miss
+orsakar. Detta bör ge den totala tiden som cachemissar orsakar. Det minne med
+det högsta värdet bör styra inställningen av miss penalty.
+
+2.4
+Du behöver aldrigt skriva till instruktionscacheminnet eftersom när programmet
+är kompilerat och startat kommer instruktionerna inte ändras. Ett självklart
+undantag till detta är självmodifierande kod, men det används inte tillräckligt
+ofta för att justifiera speciella åtgärder vid designen av cacheminnet.
+
+
