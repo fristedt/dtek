@@ -359,15 +359,15 @@ Antag att a[0][0] ligger på adress 0.
 1.  Adress: 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0, ruta 0.
 2.  Adress: 0100 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 0, ruta 1.
 3.  Adress: 1000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 0, ruta 2.
-4.  Adress: 0000 0000 0001, Läs   a[0][1]   HIT, läs från rad 0, ruta 0, byte 1.
-5.  Adress: 0100 0000 0001, Läs   b[0][1]   HIT, läs från rad 0, ruta 1, byte 1.
-6.  Adress: 1000 0000 0001, Skriv res[0][1] HIT, läs från rad 0, ruta 2, byte 1.
-7.  Adress: 0000 0000 0010, Läs   a[0][2]   HIT, läs från rad 0, ruta 0, byte 2.
-8.  Adress: 0100 0000 0010, Läs   b[0][2]   HIT, läs från rad 0, ruta 1, byte 2.
-9.  Adress: 1000 0000 0010, Skriv res[0][2] HIT, läs från rad 0, ruta 2, byte 2.
-10. Adress: 0000 0000 0011, Läs   a[0][3]   HIT, läs från rad 0, ruta 0, byte 3.
-11. Adress: 0100 0000 0011, Läs   b[0][3]   HIT, läs från rad 0, ruta 1, byte 3.
-12. Adress: 1000 0000 0011, Skriv res[0][3] HIT, läs från rad 0, ruta 2, byte 3.
+4.  Adress: 0000 0000 0001, Läs   a[0][1]   HIT, läs från rad 0, ruta 0, ord 1.
+5.  Adress: 0100 0000 0001, Läs   b[0][1]   HIT, läs från rad 0, ruta 1, ord 1.
+6.  Adress: 1000 0000 0001, Skriv res[0][1] HIT, läs från rad 0, ruta 2, ord 1.
+7.  Adress: 0000 0000 0010, Läs   a[0][2]   HIT, läs från rad 0, ruta 0, ord 2.
+8.  Adress: 0100 0000 0010, Läs   b[0][2]   HIT, läs från rad 0, ruta 1, ord 2.
+9.  Adress: 1000 0000 0010, Skriv res[0][2] HIT, läs från rad 0, ruta 2, ord 2.
+10. Adress: 0000 0000 0011, Läs   a[0][3]   HIT, läs från rad 0, ruta 0, ord 3.
+11. Adress: 0100 0000 0011, Läs   b[0][3]   HIT, läs från rad 0, ruta 1, ord 3.
+12. Adress: 1000 0000 0011, Skriv res[0][3] HIT, läs från rad 0, ruta 2, ord 3.
 13. Adress: 0000 0000 0100, Läs   a[0][4]   MISS, hämta block till rad 0, ruta 3.
 14. Adress: 0100 0000 0100, Läs   b[0][4]   MISS, hämta block till rad 0, ruta 0.
 15. Adress: 1000 0000 0100, Skriv res[0][4] MISS, hämta block till rad 0, ruta 1.
@@ -417,7 +417,7 @@ Tag: 24 rader, eftersom 32 - 8 = 24.
 1. Adress: 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0, ruta 0.
 2. Adress: 0100 0000 0000, Läs   b[0][0]   MISS, hämta block till rad 0, ruta 1.
 3. Adress: 1000 0000 0000, Skriv res[0][0] MISS, hämta block till rad 0, ruta 0.
-1. Adress: 0000 0000 0001, Läs   a[0][1]   MISS, hämta block till rad 0, ruta 1.
+4. Adress: 0000 0000 0001, Läs   a[0][1]   MISS, hämta block till rad 0, ruta 1.
 
 Varje cachemiss skriver över det näst senast som skrevs till cachen.
 
@@ -435,3 +435,42 @@ Tag: 27 bitar, eftersom 32 - 5 = 27.
 |Tag     |BO| |Tag     |BO| |Tag     |BO| |Tag     |BO|
 |27 bitar|5 | |27 bitar|5 | |27 bitar|5 | |27 bitar|5 |
 ------------- ------------- ------------- -------------
+
+5.18
+Eftersom vi aldrig läser mer från något block än något annat så kommer LRU
+alltid motsvara FIFO. Om vi istället hade läst exempelvis a[i][j] två gånger
+hade utbytespolicyn spelat större roll gånger hade utbytespolicyn spelat större
+roll.
+
+5.19
+Vi ser i tabellen nedan att av 24 instruktioner kommer 21 att vara
+cacheträffar. Därför blir hit rate 21/24 = 0.875 <=> ~87%. Vi kan alltså
+förvänta oss detta varje körning av detta program med denna cache.
+
+1.  Adress: 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till ruta 0.
+2.  Adress: 0100 0000 0000, Läs   b[0][0]   MISS, hämta block till ruta 1.
+3.  Adress: 1000 0000 0000, Skriv res[0][0] MISS, hämta block till ruta 2.
+4.  Adress: 0000 0000 0001, Läs   a[0][1]   HIT, läs från ruta 0, ord 1.
+5.  Adress: 0100 0000 0001, Läs   b[0][1]   HIT, läs från ruta 1, ord 1.
+6.  Adress: 1000 0000 0001, Skriv res[0][1] HIT, läs från ruta 2, ord 1.
+7.  Adress: 0000 0000 0010, Läs   a[0][2]   HIT, läs från ruta 0, ord 2.
+8.  Adress: 0100 0000 0010, Läs   b[0][2]   HIT, läs från ruta 1, ord 2.
+9.  Adress: 1000 0000 0010, Skriv res[0][2] HIT, läs från ruta 2, ord 2.
+10. Adress: 0000 0000 0011, Läs   a[0][3]   HIT, läs från ruta 0, ord 3.
+11. Adress: 0100 0000 0011, Läs   b[0][3]   HIT, läs från ruta 1, ord 3.
+12. Adress: 1000 0000 0011, Skriv res[0][3] HIT, läs från ruta 2, ord 3.
+13. Adress: 0000 0000 0100, Läs   a[0][4]   HIT, läs från ruta 0, ord 4.
+14. Adress: 0100 0000 0100, Läs   b[0][4]   HIT, läs från ruta 1, ord 4.
+15. Adress: 1000 0000 0100, Skriv res[0][4] HIT, läs från ruta 2, ord 4.
+16. Adress:      ...      , Läs   a[0][5]   HIT, läs från ruta 0, ord 5.
+17. Adress:      ...      , Läs   b[0][5]   HIT, läs från ruta 1, ord 5.
+18. Adress:      ...      , Skriv res[0][5] HIT, läs från ruta 2, ord 5.
+19. Adress:      ...      , Läs   a[0][6]   HIT, läs från ruta 0, ord 6.
+20. Adress:      ...      , Läs   b[0][6]   HIT, läs från ruta 1, ord 6.
+21. Adress:      ...      , Skriv res[0][6] HIT, läs från ruta 2, ord 6.
+22. Adress:      ...      , Läs   a[0][7]   HIT, läs från ruta 0, ord 7.
+23. Adress:      ...      , Läs   b[0][7]   HIT, läs från ruta 1, ord 7.
+24. Adress:      ...      , Skriv res[0][7] HIT, läs från ruta 2, ord 7.
+25. Adress:      ...      , Läs   a[0][8]   MISS, hämta block till ruta 3.
+26. Adress:      ...      , Läs   b[0][8]   MISS, hämta block till ruta 0.
+27. Adress:      ...      , Skriv res[0][8] MISS, hämta block till ruta 1.
