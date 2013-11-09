@@ -253,7 +253,7 @@ Se 5.5.
 Storlek: 512 byte.
 Blockstorlek: 16 byte.
 Rutstorlek: 512 / 4 = 128 byte.
-Icke-tagbitar: 7 bitar, eftersom 128 = 2^7.
+Icke-tag: 7 bitar, eftersom 128 = 2^7.
 Byte-offset: 4, eftersom 16 = 2^4.
 Index: 3 bitar, eftersom 7 - 4 = 3.
 Tag: 25 bitar, eftersom 32 - 7 = 25.
@@ -342,7 +342,7 @@ Samma förklaring som 5.5/5.6.
 Storlek: 512 byte.
 Rutstorlek: 128 byte, eftersom 512 / 4 = 128.
 Blockstorlek: 16 byte.
-Icke-tagbitar: 7 bitar, eftersom 128 = 2^7.
+Icke-tag: 7 bitar, eftersom 128 = 2^7.
 Byte-offset: 4 bitar, eftersom 16 = 2^4.
 Index: 3 bitar, eftersom 7 - 4 = 3.
 Rader: 8 rader, eftersom 2^3 = 8.
@@ -381,7 +381,7 @@ Associativitet 1
 Storlek: 512 byte.
 Rutstorlek: 512 byte.
 Blockstorlek: 16 byte.
-Icke-tagbitar: 9 bitar, eftersom 512 = 2^9.
+Icke-tag: 9 bitar, eftersom 512 = 2^9.
 Byte-offset: 4 bitar, eftersom 16 = 2^4.
 Index: 5 bitar, eftersom 9 - 4 = 5.
 Rader: 32 rader, eftersom 2^5 = 32.
@@ -403,7 +403,7 @@ Associativitet 2
 Storlek: 512 byte.
 Rutstorlek: 256 byte.
 Blockstorlek: 16 byte.
-Icke-tagbitar: 8 bitar, eftersom 256 = 2^8.
+Icke-tag: 8 bitar, eftersom 256 = 2^8.
 Byte-offset: 4 bitar, eftersom 16 = 2^4.
 Index: 4 bitar, eftersom 8 - 4 = 4.
 Rader: 16 rader, eftersom 2^4 = 16.
@@ -425,7 +425,7 @@ Varje cachemiss skriver över det näst senast som skrevs till cachen.
 Storlek: 128 byte.
 Rutstorlek: 32 byte.
 Blockstorlek: 32 byte.
-Icke-tagbitar: 5 bitar, eftersom 32 = 2^5.
+Icke-tag: 5 bitar, eftersom 32 = 2^5.
 Byte-offset: 5 bitar, eftersom 32 = 2^5.
 Index: 0 bitar.
 Rader: 1 rad.
@@ -474,3 +474,80 @@ förvänta oss detta varje körning av detta program med denna cache.
 25. Adress:      ...      , Läs   a[0][8]   MISS, hämta block till ruta 3.
 26. Adress:      ...      , Läs   b[0][8]   MISS, hämta block till ruta 0.
 27. Adress:      ...      , Skriv res[0][8] MISS, hämta block till ruta 1.
+
+5.20
+När vi ökar MATRIXSIZE_ROWS till 17 kommer vi få 16 nya matriselement per
+matrix. Eftersom vi har 3 matriser kommer vi alltså att få 48 nya
+matriselement. 
+
+De nya elementen kommer att placeras mellan matriserna. 
+
+5.21
+Tidigare har vi räknat med att vi har haft 1024 byte mellan a[i][j] & b[i][j]
+och b[i][j] & res[i][j]. Det kommer inte längre stämma. Vi har 16 nya
+matriselement per matris. Det innebär att avståndet mellan a[i][j] och b[i][j]
+kommer bli 1024 + 16 * 4 = 1088. Detsamma gäller avståndet mellan b[i][j] och
+res[i][j]. Förhoppningsvis kommer detta leda till att a[i][j], b[i][j], och
+res[i][j] inte längre delar index och vi slipper öka associativiteten för att
+få effektiva cacheminnen.
+
+5.22
+Storlek: 64 byte.
+Blockstorlek: 8 byte.
+Icke-tag: 6 bitar, eftersom 64 = 2^6.
+Byte-offset: 3 bitar, eftersom 8 = 2^3.
+Index: 3 bitar, eftersom 6 - 3 = 3.
+Rader: 8 rader, eftersom 2^3 = 8.
+Tag: 26 bitar, eftersom 32 - 6 = 26.
+
+                   I   B
+1.  Adress: 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0.
+2.  Adress: 0100 0100 0000, Läs   b[0][0]   MISS, hämta block till rad 0.
+3.  Adress: 1000 0100 0000, Skriv res[0][0] MISS, hämta block till rad 0.
+
+Varje cachemiss skriver över det som senast skrevs till cachen.
+
+Storlek: 128 byte.
+Blockstorlek: 8 byte.
+Icke-tag: 7 bitar, eftersom 64 = 2^7.
+Byte-offset: 3 bitar, eftersom 8 = 2^3.
+Index: 4 bitar, eftersom 7 - 3 = 4.
+Rader: 16 rader, eftersom 2^4 = 16.
+Tag: 25 bitar, eftersom 32 - 7 = 25.
+                  I    B
+1.  Adress: 0000 0000 0000, Läs   a[0][0]   MISS, hämta block till rad 0.
+2.  Adress: 0100 0100 0000, Läs   b[0][0]   MISS, hämta block till rad 1.
+3.  Adress: 1000 1000 0000, Skriv res[0][0] MISS, hämta block till rad 0.
+4.  Adress: 0000 0000 0001, Läs   a[0][0]   MISS, hämta block till rad 0.
+5.  Adress: 0100 0100 0001, Läs   b[0][0]   HIT, läs från rad 1.
+6.  Adress: 1000 1000 0001, Skriv res[0][0] MISS, hämta block till rad 0.
+
+Lite bättre än förra cacheminnet, men a[i][j] och res[i][j] skriver fortfarande
+över varandra. 1 av 6 ger hit.
+
+Storlek: 256 - 4096 byte.
+Nu kommer a[i][j], b[i][j] samt res[i][j] få varsin rad i cacheminnet. Eftersom
+blockstorleken är 2 ord kommer varannan iteration i loopen ge hit.
+
+5.23
+Varje cachemiss skriver över det som senast skrevs till cachen. Se 5.22 för
+detaljer.
+
+5.25
+Eftersom a[i][j], b[i][j] samt res[i][j] har varsin rad i cacheminnet spelar
+associativiteten inte längre någon roll för hit rate.
+
+5.26
+Blockstorlek: 4 byte.
+Eftersom varje block rymmer en int kommer vi bara att få cachemissar.
+
+Blockstorlek: 8 byte.
+Nu kommer varannan iteration av loopen att ge cacheträff. Se 5.22 för detaljer.
+
+Blockstorlek: 16 byte.
+Nu rymmer ett block 4 ints. Därför kommer 9 av 12 instruktioner ge cacheträff.
+9 / 12 = 3 / 4 <=> 75%. 
+
+Blockstorlek: 32 byte.
+Nu rymmer ett block 8 ints. Därför kommer 21 av 24 instruktioner ge cacheträff.  
+21 / 24 = 7 / 8 <=> ~85%.
