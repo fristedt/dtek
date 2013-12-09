@@ -1,0 +1,59 @@
+1.1
+MAX_THREADS används på två ställen i koden. Konstanten används av variablen
+oslab_threads_info_array som en begränsning av antalet trådar i arrayen och
+konstanten används i funktionen oslab_create_thread för att kontrollera att
+antalet trådar i oslab_threads_info_array inte överskrider begränsningen.
+Arrayen oslab_threads_info_array används vid bokföringen av trådar.
+
+Till exempel används arrayen för att hålla reda på: 
+  Vilken tråd som körs just nu (oslab_currently_running_thread). 
+  Antalet trådar i systemet (oslab_current_thread_count).
+  Nästa tillgängliga tråd (oslab_next_avaliable_thread).
+  
+1.2
+Vid timeravbrott sparas register r1 till och med r23, plus fp, gp, ra och ea.
+Detta görs i exception-handlern i oslab_exception_handler i filen
+oslab_lowlever_asm.s. Mer detaljerat; oslab_time_to_switch.
+
+1.3
+Stackpekaren sparas istället i arrayen oslab_threads_info_array. Arrayen består
+av structs Prod där det finns en int startvalue som innehåller startadressen
+till stackpekaren. 
+
+1.4
+Direkt efter att alla register har sparats kopieras stackpekarens adress till
+param1-registret (r4). Efter lite utskrifter kommer programmet till labeln
+oslab_not_a_trap där raderna 
+
+movia et, oslab_internal_threadswitch
+callr et
+
+kallar c-funktionen oslab_internal_threadswitch(unsigned int * old_sp) där
+old_sp är stackpekaren eftersom stackpekaren ligger i r4. I funktionen sparas
+stackpekaren till oslab_threads_info_array med raden 
+ 
+oslab_threads_info_array[ oslab_currently_running_thread ].thread_sp = old_sp;
+
+1.5
+Den nya tråden väljs ut enligt principen round-robin. Det innebär att alla
+trådar har samma prioritet. Detta sköts av koden
+
+/* Perform the scheduling decision (round-robin). */
+oslab_currently_running_thread += 1;
+if( oslab_currently_running_thread >= oslab_current_thread_count )
+{
+  oslab_currently_running_thread = 0;
+}
+
+Nästa tråd är alltså den tråd med indexet som kommer efter den föregående
+trådens index, med undantaget då oslab_currently_running_thread >=
+oslab_current_thread_count; väljs tråd 0 som den som ska köras.
+
+1.6
+Detta sköts av koden 
+
+new_sp = oslab_thread_info_array[ oslab_currently_running_thread ].thread_sp;
+
+Det fungerar genom att programmet kollar upp indexet
+oslab_currently_running_thread i arrayen oslab_thread_info_array och hämtar
+stackpekaren därifrån.
