@@ -57,3 +57,219 @@ new_sp = oslab_thread_info_array[ oslab_currently_running_thread ].thread_sp;
 Det fungerar genom att programmet kollar upp indexet
 oslab_currently_running_thread i arrayen oslab_thread_info_array och hämtar
 stackpekaren därifrån.
+
+1.7
+Steg ett beskrevs i frågan ovan och stackpekaren ligger nu i variabeln new_sp.
+Denna variabel returneras av C-funktionen (läggs i r2), följt av att rad 338 i
+oslab_lowlevel_asm.s flyttar stackpekaren från r2 till sp med instruktionen mov
+sp,r2.
+
+1.8
+Tillståndet återställs av raderna 343-368 i oslab_lowlevel_asm.s.
+
+1.9
+Rad 369 i oslab_lowlevel_asm.s återställer registret ea (Exception return
+adress) till det tillståndet registret hade när tråden avbröts. När rad 372
+sedan kallar eret kommer adressen i registret att skrivas till programräknaren.
+
+1.10
+Parameter 1: En pekare till funktionen som tråden ska köra. 
+Parameter 2: En pekare till ett argument till funktionen som till det
+tillståndet registret hade när tråden avbröts. När rad 372 sedan kallar eret
+kommer adressen i registret att skrivas till programräknaren.uu
+Parameter 3: En pekare till toppen av trådens stack.
+
+1.11
+Rad 160 i oslab_lowlevel_c.c placerar adressen till funktionen på plats 0 i
+trådens nya stack. Raden ser ut så här:
+
+new_thread_sp[ 0 ] = (unsigned int) thread_function;
+
+1.12
+Rad 161 i oslab_lowlevel_c.c placerar adressen till funktionens argument på
+plats 4 i trådens nya stack. Raden ser ut så här:
+
+new_thread_sp[ 4 ] = (unsigned int) thread_arg;
+
+1.13
+Den tredje parametern är en pekare till toppen av trådens stack. Den bör sparas
+i ready-kön, vilket görs på rad 214 i oslab_lowlevel_c.c. Raden ser ut så här:
+
+oslab_thread_info_array[ oslab_current_thread_count ].thread_sp = new_thread_sp;
+
+1.14
+Det beror på vilken tråd som körs just nu. Rad 212 ökar variabeln
+oslab_next_avaliable_thread med 1. Om den operationen medför att nästa
+tillgängliga tråd blir vår nya tråd så finns det en chans att operativsystemet
+avbryter funktionen mellan rad 218 och 219 och byter till vår nya tråd.
+
+1.15
+oslab_yield används av trådar som inte behöver den resterande tiden av sin
+timeslice. Funktionens effekt är att den nuvarande trådens timeslice avbryts
+direkt och nästa tråd i ready-kön börjar köra.
+
+1.16
+Koden bakom oslab_yield finns på raderna 476-479. Funktionen ser ut så här:
+
+.global oslab_yield
+oslab_yield:
+  trap
+  ret
+
+Det fungerar genom att instruktionen trap avbryten exekveringen och
+avbrottshanteraren byter tråd.
+
+1.17
+Sleep bör inte anropas om vi vill att idle-tråden ska ta så lite tid som
+möjligt eftersom sleep tar tid. oslab_yield() bör kallas så fort idle-tråden
+blir aktiv.
+
+1.18
+I oslab_lowlevel_c.s finns två definitioner du kan ändra för att ändra
+storleken på en time-slice; de2_timer1_timeout_value och
+oslab_ticks_per_timeslice. Den första definitionen är tiden per timeout och den
+andra är antalet timouts per timeslice. 
+
+time-slice = de2_timer1_timeout_value * oslab_ticks_per_timeslice.
+
+2.3
+Det finns två trådar i systemet; huvudtråden och Producer 1 tråden.
+
+2.4
+Trådarna körs i ordningen 0-1-0-... Tråd 0 (huvudtråden) yieldar direkt medan
+Producer 1 tråden kör hela sin timeslice.
+
+2.7
+Huvudtråd
+Producer 1
+Producer 2
+Producer 3
+
+2.8
+0-1-2-3-0-...
+Tråd 0 använder så lång tid den behöver av sin timeslice för att starta de tre
+Producer-trådarna. Därefter kommer den bara yielda. De tre Producer-trådarna
+använder hela sina timeslices.
+
+3.1
+Consumer-tråden läser ibland samma primtal flera gånger om den hinner konsumera
+alla primtal i FIFO-kön upp till index FIFO_SIZE. Då kommer GetFifo() istället
+returnera Fifo[0].
+
+3.8
+Nej, alla primtal konsumeras för min körning. Det finns dock en risk att det
+sker, eftersom om de tre Producer-trådarna tillsammans producerar mer än 10
+primtal så kommer de primtal som producerades först att skrivas över.
+
+3.9
+Nu används semaforer på ett sätt som medför ett gäng positiva förändringar.
+Dessa beskrivs i svar 3.10 och 3.13.
+
+3.10
+Nej, nu kommer Consumer-tråden inte längre läsa värdet 0. I tidigare
+programversionen gjorde Consumer-tråden det, men nu används semaforer för att
+tvinga Consumer-tråden att vänta om det är slut på läsbara primtal i Fifo-kön.
+
+3.13
+Nej, nu kommer alla primtal att konsumeras eftersom Producer-trådarna inte
+längre kommer skriva över primtal om Fifo-kön är full.
+
+4.1
+Att yielda i Wait() om *sem <= 0 är en vettig idé för både Producer- och
+Consumer-trådarna. För Producer-trådarna innebär nrempty <= 0 att Fifo-kön är
+full. Då kan Producertråden ändå inte gör sitt jobb och det är lika bra att
+yielda. Ett liknande fall gäller för nrfull och Consumertrådarna.
+
+4.8
+Det är 6 trådbyten mellan varje konsumption. 4-5-0-1-2-3-4
+232-4 = 228; Det är 228 trådbyten mellan första konsumptionen
+228 / 6 = 38.
+
+Enligt detta är det 38 primtal mellan 1000 och 10333. Det stämmer dock inte ty
+många av primtalen som programmet genererar inte är primtal.
+
+5.1
+Nej, jag ser inga problem vid körningen.
+
+5.2
+Anledningen till att vi slipper problem vid denna körning är att Consumer 1
+hinner konsumera samtliga primtal som ligger i Fifo-kön så Consumer 2 yieldar
+varje gång den blir aktiv. Om båda Consumer-trådarna hade varit aktiva
+samtidigt och vi inte använde rdmutex skulle problem kunna uppstå. Till exempel
+skulle båda Consumer-trådarna kunna läsa samma primtal från Fifo-kön om ett
+interrupt sker innan Fifi-pekaren ökas.
+
+5.3
+Nej, jag ser inga problem vid körningen.
+
+5.4
+Problem kan uppstå. Till exempel kan Producer 1 generera ett primtal, och
+skriva det till Fifo-kön. Men innan Producer 1 hinner öka pekaren till Fifo-kön
+kommer ett avbrott och Producer 2 börjar jobba. Med lite otur kan Producer 2 nu
+skriva över det Producer 1 skrev till Fifo-kön.
+
+5.5
+Nej, eftersom de tre Producer-trådarna inte hinner producera mer än 10 primtal
+per "runda" och Consumer-trådarna hinner konsumera alla 10 primtal på samma
+"runda".
+
+5.6
+Problem kan uppstå om Producer-trådarna hinner producera mer än 10 primtal på
+en "runda" och/eller om Consumer-trådarna inte hinner konsumera dessa primtal
+på samma "runda". Då kan det hända att Producer-trådarna skriver över
+icke-konsumerade primtal.
+
+5.7
+Ja, Consumer-trådarna blir galna. De läser båda samma primtal och båda läser
+dessutom nollor från Fifo-kön.
+
+5.8
+Det som händer är att Consumer-trådarna inte längre begränsas av att endast
+läsa då nya primtal har lagts till av Producer-trådarna. De kör på och läser
+från Fifo-kön oavsett vad Producertrådarna har gjort.
+
+5.9
+Nej, jag ser inga problem.
+
+5.10
+Problemen som kan uppstå är att Producer-trådarna förhindrar Consumer-trådarna
+utan anledning, och vice versa. Låt säga att det finns okonsumerade primtal i
+Fifo-kön och att Producer 3 precis har räknat ut ett primtal. Producer 3 tar då
+en "boll" ur nrempty respektive mutex. Därefter skriver Producer 3 primtalet
+till Fifo-kön och ökar skrivadresspekaren följt av ett trådbyte till Consumer
+1. Nu kan inte Consumer 1 inte arbeta eftersom Producer 3 fortfarande har
+mutex, trots att det finns primtal som är redo att konsumera. Detsamma gäller
+alla andra trådar som kräver mutex.
+
+5.11
+Långsammare, se 5.10.
+
+6.1
+Programkoden som körs efter att tråden fått tillgång till processorn igen är
+
+142 /* Disable interrupts again before next iteration in loop. */
+143 oslab_begin_critical_region();
+
+135 while ( *sem <= 0 ) {
+
+137 /* If we should wait, enable interrupts again. */
+138 oslab_end_critical_region();
+
+140 oslab_yield(); /* Perhaps we should yield here? */
+
+eftersom programräknaren återställs till adressen i registret ea i samband med
+trådbytet. Den adressen är det som kommer precis efter yieldfunktionen. Därför
+utnyttjas inte en hel time-slice.
+
+6.2
+Ett operativsystem med en kö per semafor har fördelen att en tråd som väntar på
+på en semafor komma att få köra så fort den semaforen ändrar värde. Dessutom
+slipper processorn att spendera cykler på trådar som inte kan göra någonting
+eftersom tråden väntar på en semafor. 
+
+Tyvärr finns det nackdelar av ett sådant operativsystem. Bokföringen (extra
+minne, processorcykler) som krävs för att hålla reda på alla köer lär bli
+tillräckligt omfattande för att ha prestandamässiga nackdelar.
+
+Dessutom skulle systemet bli väldigt komplext på grund av all bokföring som
+måste hanteras, avbrott vid alla anrop till Signal() o.s.v.

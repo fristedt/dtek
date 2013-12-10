@@ -1,0 +1,1607 @@
+
+System starting...
+Producer 1 is created with thread-ID 1
+Producer 2 is created with thread-ID 2
+Producer 3 is created with thread-ID 3
+Consumer 1 is created with thread-ID 4
+Consumer 2 is created with thread-ID 5
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 1. The system has been running for 1 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10007
+Next Prime from producer 1 is 10009
+Next Prime from producer 1 is 10037
+Next Prime from producer 1 is 10039
+Next Prime from producer 1 is 10061
+Performing thread-switch number 2. The system has been running for 101 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20011
+Next Prime from producer 2 is 20021
+Performing thread-switch number 3. The system has been running for 201 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30011
+Performing thread-switch number 4. The system has been running for 301 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10007 
+Consumer 1 gets Prime 10009 
+Consumer 1 gets Prime 10037 
+Consumer 1 gets Prime 10039 
+Consumer 1 gets Prime 10061 
+Consumer 1 gets Prime 20011 
+Consumer 1 gets Prime 20021 
+Consumer 1 gets Prime 30011 
+#### Thread yielded after using 22 ticks.
+Performing thread-switch number 5. The system has been running for 323 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 6. The system has been running for 324 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 7. The system has been running for 325 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10067
+Next Prime from producer 1 is 10069
+Next Prime from producer 1 is 10079
+Next Prime from producer 1 is 10091
+Next Prime from producer 1 is 10093
+Performing thread-switch number 8. The system has been running for 425 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20023
+Next Prime from producer 2 is 20029
+Next Prime from producer 2 is 20047
+Performing thread-switch number 9. The system has been running for 525 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30013
+Next Prime from producer 3 is 30029
+Performing thread-switch number 10. The system has been running for 625 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10067 
+Consumer 1 gets Prime 10069 
+Consumer 1 gets Prime 10079 
+Consumer 1 gets Prime 10091 
+Consumer 1 gets Prime 10093 
+Consumer 1 gets Prime 20023 
+Consumer 1 gets Prime 20029 
+Consumer 1 gets Prime 20047 
+Consumer 1 gets Prime 30013 
+Consumer 1 gets Prime 30029 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 11. The system has been running for 652 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 12. The system has been running for 653 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 13. The system has been running for 654 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10099
+Next Prime from producer 1 is 10103
+Next Prime from producer 1 is 10111
+Next Prime from producer 1 is 10133
+Next Prime from producer 1 is 10139
+Performing thread-switch number 14. The system has been running for 754 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20051
+Next Prime from producer 2 is 20063
+Next Prime from producer 2 is 20071
+Performing thread-switch number 15. The system has been running for 854 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30047
+Next Prime from producer 3 is 30059
+Performing thread-switch number 16. The system has been running for 954 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10099 
+Consumer 1 gets Prime 10103 
+Consumer 1 gets Prime 10111 
+Consumer 1 gets Prime 10133 
+Consumer 1 gets Prime 10139 
+Consumer 1 gets Prime 20051 
+Consumer 1 gets Prime 20063 
+Consumer 1 gets Prime 20071 
+Consumer 1 gets Prime 30047 
+Consumer 1 gets Prime 30059 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 17. The system has been running for 981 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 18. The system has been running for 982 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 19. The system has been running for 983 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10141
+Next Prime from producer 1 is 10151
+Next Prime from producer 1 is 10159
+Next Prime from producer 1 is 10163
+Next Prime from producer 1 is 10169
+Performing thread-switch number 20. The system has been running for 1083 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20089
+Next Prime from producer 2 is 20101
+Performing thread-switch number 21. The system has been running for 1183 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30071
+Next Prime from producer 3 is 30089
+Performing thread-switch number 22. The system has been running for 1283 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10141 
+Consumer 1 gets Prime 10151 
+Consumer 1 gets Prime 10159 
+Consumer 1 gets Prime 10163 
+Consumer 1 gets Prime 10169 
+Consumer 1 gets Prime 20089 
+Consumer 1 gets Prime 20101 
+Consumer 1 gets Prime 30071 
+Consumer 1 gets Prime 30089 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 23. The system has been running for 1307 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 24. The system has been running for 1308 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 25. The system has been running for 1309 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10177
+Next Prime from producer 1 is 10181
+Next Prime from producer 1 is 10193
+Next Prime from producer 1 is 10211
+Next Prime from producer 1 is 10223
+Next Prime from producer 1 is 10243
+Performing thread-switch number 26. The system has been running for 1409 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20107
+Next Prime from producer 2 is 20113
+Next Prime from producer 2 is 20117
+Performing thread-switch number 27. The system has been running for 1509 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30091
+Next Prime from producer 3 is 30097
+#### Thread yielded after using 99 ticks.
+Performing thread-switch number 28. The system has been running for 1608 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10177 
+Consumer 1 gets Prime 10181 
+Consumer 1 gets Prime 10193 
+Consumer 1 gets Prime 10211 
+Consumer 1 gets Prime 10223 
+Consumer 1 gets Prime 10243 
+Consumer 1 gets Prime 20107 
+Consumer 1 gets Prime 20113 
+Consumer 1 gets Prime 20117 
+Consumer 1 gets Prime 30091 
+#### Thread yielded after using 28 ticks.
+Performing thread-switch number 29. The system has been running for 1636 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 30. The system has been running for 1637 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 31. The system has been running for 1638 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10247
+Next Prime from producer 1 is 10253
+Next Prime from producer 1 is 10259
+Next Prime from producer 1 is 10267
+Next Prime from producer 1 is 10271
+Performing thread-switch number 32. The system has been running for 1738 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20123
+Next Prime from producer 2 is 20129
+Next Prime from producer 2 is 20143
+Performing thread-switch number 33. The system has been running for 1838 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30103
+Performing thread-switch number 34. The system has been running for 1938 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10247 
+Consumer 1 gets Prime 10253 
+Consumer 1 gets Prime 10259 
+Consumer 1 gets Prime 10267 
+Consumer 1 gets Prime 10271 
+Consumer 1 gets Prime 20123 
+Consumer 1 gets Prime 20129 
+Consumer 1 gets Prime 20143 
+Consumer 1 gets Prime 30097 
+Consumer 1 gets Prime 30103 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 35. The system has been running for 1965 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 36. The system has been running for 1966 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 37. The system has been running for 1967 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10273
+Next Prime from producer 1 is 10289
+Next Prime from producer 1 is 10301
+Next Prime from producer 1 is 10303
+Next Prime from producer 1 is 10313
+Performing thread-switch number 38. The system has been running for 2067 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20147
+Next Prime from producer 2 is 20149
+Performing thread-switch number 39. The system has been running for 2167 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30109
+Next Prime from producer 3 is 30113
+Performing thread-switch number 40. The system has been running for 2267 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10273 
+Consumer 1 gets Prime 10289 
+Consumer 1 gets Prime 10301 
+Consumer 1 gets Prime 10303 
+Consumer 1 gets Prime 10313 
+Consumer 1 gets Prime 20147 
+Consumer 1 gets Prime 20149 
+Consumer 1 gets Prime 30109 
+Consumer 1 gets Prime 30113 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 41. The system has been running for 2291 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 42. The system has been running for 2292 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 43. The system has been running for 2293 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10321
+Next Prime from producer 1 is 10331
+Next Prime from producer 1 is 10333
+Next Prime from producer 1 is 10337
+Next Prime from producer 1 is 10343
+Performing thread-switch number 44. The system has been running for 2393 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20161
+Next Prime from producer 2 is 20173
+Next Prime from producer 2 is 20177
+Performing thread-switch number 45. The system has been running for 2493 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30119
+Next Prime from producer 3 is 30133
+Performing thread-switch number 46. The system has been running for 2593 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10321 
+Consumer 1 gets Prime 10331 
+Consumer 1 gets Prime 10333 
+Consumer 1 gets Prime 10337 
+Consumer 1 gets Prime 10343 
+Consumer 1 gets Prime 20161 
+Consumer 1 gets Prime 20173 
+Consumer 1 gets Prime 20177 
+Consumer 1 gets Prime 30119 
+Consumer 1 gets Prime 30133 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 47. The system has been running for 2620 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 48. The system has been running for 2621 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 49. The system has been running for 2622 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10357
+Next Prime from producer 1 is 10369
+Next Prime from producer 1 is 10391
+Next Prime from producer 1 is 10399
+Next Prime from producer 1 is 10427
+Performing thread-switch number 50. The system has been running for 2722 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20183
+Next Prime from producer 2 is 20201
+Next Prime from producer 2 is 20219
+Performing thread-switch number 51. The system has been running for 2822 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30137
+Next Prime from producer 3 is 30139
+Performing thread-switch number 52. The system has been running for 2922 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10357 
+Consumer 1 gets Prime 10369 
+Consumer 1 gets Prime 10391 
+Consumer 1 gets Prime 10399 
+Consumer 1 gets Prime 10427 
+Consumer 1 gets Prime 20183 
+Consumer 1 gets Prime 20201 
+Consumer 1 gets Prime 20219 
+Consumer 1 gets Prime 30137 
+Consumer 1 gets Prime 30139 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 53. The system has been running for 2949 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 54. The system has been running for 2950 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 55. The system has been running for 2951 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10429
+Next Prime from producer 1 is 10433
+Next Prime from producer 1 is 10453
+Next Prime from producer 1 is 10457
+Next Prime from producer 1 is 10459
+Performing thread-switch number 56. The system has been running for 3051 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20231
+Next Prime from producer 2 is 20233
+Performing thread-switch number 57. The system has been running for 3151 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30161
+Next Prime from producer 3 is 30169
+Performing thread-switch number 58. The system has been running for 3251 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10429 
+Consumer 1 gets Prime 10433 
+Consumer 1 gets Prime 10453 
+Consumer 1 gets Prime 10457 
+Consumer 1 gets Prime 10459 
+Consumer 1 gets Prime 20231 
+Consumer 1 gets Prime 20233 
+Consumer 1 gets Prime 30161 
+Consumer 1 gets Prime 30169 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 59. The system has been running for 3275 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 60. The system has been running for 3276 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 61. The system has been running for 3277 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10463
+Next Prime from producer 1 is 10477
+Next Prime from producer 1 is 10487
+Next Prime from producer 1 is 10499
+Next Prime from producer 1 is 10501
+Next Prime from p
+Performing thread-switch number 62. The system has been running for 3377 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20249
+Next Prime from producer 2 is 20261
+Next Prime from producer 2 is 20269
+Performing thread-switch number 63. The system has been running for 3477 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30181
+Performing thread-switch number 64. The system has been running for 3577 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10463 
+Consumer 1 gets Prime 10477 
+Consumer 1 gets Prime 10487 
+Consumer 1 gets Prime 10499 
+Consumer 1 gets Prime 10501 
+Consumer 1 gets Prime 20249 
+Consumer 1 gets Prime 20261 
+Consumer 1 gets Prime 20269 
+Consumer 1 gets Prime 30181 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 65. The system has been running for 3601 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 66. The system has been running for 3602 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 67. The system has been running for 3603 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+roducer 1 is 10513
+Next Prime from producer 1 is 10529
+Next Prime from producer 1 is 10531
+Next Prime from producer 1 is 10559
+Next Prime from producer 1 is 10567
+Performing thread-switch number 68. The system has been running for 3703 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20287
+Next Prime from producer 2 is 20297
+Next Prime from producer 2 is 20323
+Performing thread-switch number 69. The system has been running for 3803 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30187
+Next Prime from producer 3 is 30197
+Performing thread-switch number 70. The system has been running for 3903 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10513 
+Consumer 1 gets Prime 10529 
+Consumer 1 gets Prime 10531 
+Consumer 1 gets Prime 10559 
+Consumer 1 gets Prime 10567 
+Consumer 1 gets Prime 20287 
+Consumer 1 gets Prime 20297 
+Consumer 1 gets Prime 20323 
+Consumer 1 gets Prime 30187 
+Consumer 1 gets Prime 30197 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 71. The system has been running for 3930 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 72. The system has been running for 3931 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 73. The system has been running for 3932 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10589
+Next Prime from producer 1 is 10597
+Next Prime from producer 1 is 10601
+Next Prime from producer 1 is 10607
+Next Prime from producer 1 is 10613
+Next Prime from producer 1 is 1062
+Performing thread-switch number 74. The system has been running for 4032 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20327
+Next Prime from producer 2 is 20333
+Performing thread-switch number 75. The system has been running for 4132 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30203
+Next Prime from producer 3 is 30211
+Performing thread-switch number 76. The system has been running for 4232 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10589 
+Consumer 1 gets Prime 10597 
+Consumer 1 gets Prime 10601 
+Consumer 1 gets Prime 10607 
+Consumer 1 gets Prime 10613 
+Consumer 1 gets Prime 20327 
+Consumer 1 gets Prime 20333 
+Consumer 1 gets Prime 30203 
+Consumer 1 gets Prime 30211 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 77. The system has been running for 4256 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 78. The system has been running for 4257 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 79. The system has been running for 4258 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+7
+Next Prime from producer 1 is 10631
+Next Prime from producer 1 is 10639
+Next Prime from producer 1 is 10651
+Next Prime from producer 1 is 10657
+Next Prime from producer 1 is 10663
+Performing thread-switch number 80. The system has been running for 4358 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20341
+Next Prime from producer 2 is 20347
+Next Prime from producer 2 is 20353
+Performing thread-switch number 81. The system has been running for 4458 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30223
+Next Prime from producer 3 is 30241
+#### Thread yielded after using 89 ticks.
+Performing thread-switch number 82. The system has been running for 4547 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10627 
+Consumer 1 gets Prime 10631 
+Consumer 1 gets Prime 10639 
+Consumer 1 gets Prime 10651 
+Consumer 1 gets Prime 10657 
+Consumer 1 gets Prime 10663 
+Consumer 1 gets Prime 20341 
+Consumer 1 gets Prime 20347 
+Consumer 1 gets Prime 20353 
+Consumer 1 gets Prime 30223 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 83. The system has been running for 4574 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 84. The system has been running for 4575 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 85. The system has been running for 4576 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10667
+Next Prime from producer 1 is 10687
+Next Prime from producer 1 is 10691
+Next Prime from producer 1 is 10709
+Next Prime from producer 1 is 10711
+Performing thread-switch number 86. The system has been running for 4676 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20357
+Next Prime from producer 2 is 20359
+Next Prime from producer 2 is 20369
+Performing thread-switch number 87. The system has been running for 4776 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30253
+Performing thread-switch number 88. The system has been running for 4876 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10667 
+Consumer 1 gets Prime 10687 
+Consumer 1 gets Prime 10691 
+Consumer 1 gets Prime 10709 
+Consumer 1 gets Prime 10711 
+Consumer 1 gets Prime 20357 
+Consumer 1 gets Prime 20359 
+Consumer 1 gets Prime 20369 
+Consumer 1 gets Prime 30241 
+Consumer 1 gets Prime 30253 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 89. The system has been running for 4903 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 90. The system has been running for 4904 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 91. The system has been running for 4905 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10723
+Next Prime from producer 1 is 10729
+Next Prime from producer 1 is 10733
+Next Prime from producer 1 is 10739
+Next Prime from producer 1 is 10753
+Performing thread-switch number 92. The system has been running for 5005 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20389
+Next Prime from producer 2 is 20393
+Performing thread-switch number 93. The system has been running for 5105 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30259
+Next Prime from producer 3 is 30269
+Performing thread-switch number 94. The system has been running for 5205 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10723 
+Consumer 1 gets Prime 10729 
+Consumer 1 gets Prime 10733 
+Consumer 1 gets Prime 10739 
+Consumer 1 gets Prime 20389 
+Consumer 1 gets Prime 20393 
+Consumer 1 gets Prime 30259 
+Consumer 1 gets Prime 30269 
+#### Thread yielded after using 22 ticks.
+Performing thread-switch number 95. The system has been running for 5227 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 96. The system has been running for 5228 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 97. The system has been running for 5229 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10771
+Next Prime from producer 1 is 10781
+Next Prime from producer 1 is 10789
+Next Prime from producer 1 is 10799
+Performing thread-switch number 98. The system has been running for 5329 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20399
+Next Prime from producer 2 is 20407
+Next Prime from producer 2 is 20411
+Performing thread-switch number 99. The system has been running for 5429 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30271
+Next Prime from producer 3 is 30293
+Performing thread-switch number 100. The system has been running for 5529 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10753 
+Consumer 1 gets Prime 10771 
+Consumer 1 gets Prime 10781 
+Consumer 1 gets Prime 10789 
+Consumer 1 gets Prime 10799 
+Consumer 1 gets Prime 20399 
+Consumer 1 gets Prime 20407 
+Consumer 1 gets Prime 20411 
+Consumer 1 gets Prime 30271 
+Consumer 1 gets Prime 30293 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 101. The system has been running for 5556 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 102. The system has been running for 5557 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 103. The system has been running for 5558 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10831
+Next Prime from producer 1 is 10837
+Next Prime from producer 1 is 10847
+Next Prime from producer 1 is 10853
+Next Prime from producer 1 is 10859
+Performing thread-switch number 104. The system has been running for 5658 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20431
+Next Prime from producer 2 is 20441
+Next Prime from producer 2 is 20443
+Performing thread-switch number 105. The system has been running for 5758 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30307
+Next Prime from producer 3 is 30313
+Performing thread-switch number 106. The system has been running for 5858 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10831 
+Consumer 1 gets Prime 10837 
+Consumer 1 gets Prime 10847 
+Consumer 1 gets Prime 10853 
+Consumer 1 gets Prime 10859 
+Consumer 1 gets Prime 20431 
+Consumer 1 gets Prime 20441 
+Consumer 1 gets Prime 20443 
+Consumer 1 gets Prime 30307 
+Consumer 1 gets Prime 30313 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 107. The system has been running for 5885 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 108. The system has been running for 5886 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 109. The system has been running for 5887 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10861
+Next Prime from producer 1 is 10867
+Next Prime from producer 1 is 10883
+Next Prime from producer 1 is 10889
+Next Prime from producer 1 is 10891
+Performing thread-switch number 110. The system has been running for 5987 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20477
+Next Prime from producer 2 is 20479
+Performing thread-switch number 111. The system has been running for 6087 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30319
+Performing thread-switch number 112. The system has been running for 6187 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10861 
+Consumer 1 gets Prime 10867 
+Consumer 1 gets Prime 10883 
+Consumer 1 gets Prime 10889 
+Consumer 1 gets Prime 10891 
+Consumer 1 gets Prime 20477 
+Consumer 1 gets Prime 20479 
+Consumer 1 gets Prime 30319 
+#### Thread yielded after using 22 ticks.
+Performing thread-switch number 113. The system has been running for 6209 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 114. The system has been running for 6210 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 115. The system has been running for 6211 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10903
+Next Prime from producer 1 is 10909
+Next Prime from producer 1 is 10937
+Next Prime from producer 1 is 10939
+Next Prime from producer 1 is 10949
+Performing thread-switch number 116. The system has been running for 6311 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20483
+Next Prime from producer 2 is 20507
+Next Prime from producer 2 is 20509
+Performing thread-switch number 117. The system has been running for 6411 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30323
+Next Prime from producer 3 is 30341
+Performing thread-switch number 118. The system has been running for 6511 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10903 
+Consumer 1 gets Prime 10909 
+Consumer 1 gets Prime 10937 
+Consumer 1 gets Prime 10939 
+Consumer 1 gets Prime 10949 
+Consumer 1 gets Prime 20483 
+Consumer 1 gets Prime 20507 
+Consumer 1 gets Prime 20509 
+Consumer 1 gets Prime 30323 
+Consumer 1 gets Prime 30341 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 119. The system has been running for 6538 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 120. The system has been running for 6539 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 121. The system has been running for 6540 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 10957
+Next Prime from producer 1 is 10973
+Next Prime from producer 1 is 10979
+Next Prime from producer 1 is 10987
+Next Prime from producer 1 is 10993
+Performing thread-switch number 122. The system has been running for 6640 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20521
+Next Prime from producer 2 is 20533
+Performing thread-switch number 123. The system has been running for 6740 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30347
+Next Prime from producer 3 is 30367
+Performing thread-switch number 124. The system has been running for 6840 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 10957 
+Consumer 1 gets Prime 10973 
+Consumer 1 gets Prime 10979 
+Consumer 1 gets Prime 10987 
+Consumer 1 gets Prime 10993 
+Consumer 1 gets Prime 20521 
+Consumer 1 gets Prime 20533 
+Consumer 1 gets Prime 30347 
+Consumer 1 gets Prime 30367 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 125. The system has been running for 6864 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 126. The system has been running for 6865 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 127. The system has been running for 6866 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11003
+Next Prime from producer 1 is 11027
+Next Prime from producer 1 is 11047
+Next Prime from producer 1 is 11057
+Next Prime from producer 1 is 11059
+Performing thread-switch number 128. The system has been running for 6966 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20543
+Next Prime from producer 2 is 20549
+Next Prime from producer 2 is 20551
+Performing thread-switch number 129. The system has been running for 7066 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30389
+Next Prime from producer 3 is 30391
+Performing thread-switch number 130. The system has been running for 7166 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11003 
+Consumer 1 gets Prime 11027 
+Consumer 1 gets Prime 11047 
+Consumer 1 gets Prime 11057 
+Consumer 1 gets Prime 11059 
+Consumer 1 gets Prime 20543 
+Consumer 1 gets Prime 20549 
+Consumer 1 gets Prime 20551 
+Consumer 1 gets Prime 30389 
+Consumer 1 gets Prime 30391 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 131. The system has been running for 7193 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 132. The system has been running for 7194 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 133. The system has been running for 7195 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11069
+Next Prime from producer 1 is 11071
+Next Prime from producer 1 is 11083
+Next Prime from producer 1 is 11087
+Next Prime from producer 1 is 11093
+Performing thread-switch number 134. The system has been running for 7295 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20563
+Next Prime from producer 2 is 20593
+Next Prime from producer 2 is 20599
+Performing thread-switch number 135. The system has been running for 7395 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30403
+Next Prime from producer 3 is 30427
+Performing thread-switch number 136. The system has been running for 7495 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11069 
+Consumer 1 gets Prime 11071 
+Consumer 1 gets Prime 11083 
+Consumer 1 gets Prime 11087 
+Consumer 1 gets Prime 11093 
+Consumer 1 gets Prime 20563 
+Consumer 1 gets Prime 20593 
+Consumer 1 gets Prime 20599 
+Consumer 1 gets Prime 30403 
+Consumer 1 gets Prime 30427 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 137. The system has been running for 7522 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 138. The system has been running for 7523 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 139. The system has been running for 7524 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11113
+Next Prime from producer 1 is 11117
+Next Prime from producer 1 is 11119
+Next Prime from producer 1 is 11131
+Performing thread-switch number 140. The system has been running for 7624 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20611
+Next Prime from producer 2 is 20627
+Performing thread-switch number 141. The system has been running for 7724 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30431
+Performing thread-switch number 142. The system has been running for 7824 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11113 
+Consumer 1 gets Prime 11117 
+Consumer 1 gets Prime 11119 
+Consumer 1 gets Prime 11131 
+Consumer 1 gets Prime 20611 
+Consumer 1 gets Prime 20627 
+Consumer 1 gets Prime 30431 
+#### Thread yielded after using 19 ticks.
+Performing thread-switch number 143. The system has been running for 7843 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 144. The system has been running for 7844 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 145. The system has been running for 7845 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11149
+Next Prime from producer 1 is 11159
+Next Prime from producer 1 is 11161
+Next Prime from producer 1 is 11171
+Next Prime from producer 1 is 11173
+Performing thread-switch number 146. The system has been running for 7945 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20639
+Next Prime from producer 2 is 20641
+Next Prime from producer 2 is 20663
+Performing thread-switch number 147. The system has been running for 8045 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30449
+Next Prime from producer 3 is 30467
+Performing thread-switch number 148. The system has been running for 8145 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11149 
+Consumer 1 gets Prime 11159 
+Consumer 1 gets Prime 11161 
+Consumer 1 gets Prime 11171 
+Consumer 1 gets Prime 11173 
+Consumer 1 gets Prime 20639 
+Consumer 1 gets Prime 20641 
+Consumer 1 gets Prime 20663 
+Consumer 1 gets Prime 30449 
+Consumer 1 gets Prime 30467 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 149. The system has been running for 8172 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 150. The system has been running for 8173 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 151. The system has been running for 8174 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11177
+Next Prime from producer 1 is 11197
+Next Prime from producer 1 is 11213
+Next Prime from producer 1 is 11239
+Next Prime from producer 1 is 11243
+Performing thread-switch number 152. The system has been running for 8274 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20681
+Next Prime from producer 2 is 20693
+Next Prime from producer 2 is 20707
+Performing thread-switch number 153. The system has been running for 8374 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30469
+Next Prime from producer 3 is 30491
+Performing thread-switch number 154. The system has been running for 8474 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11177 
+Consumer 1 gets Prime 11197 
+Consumer 1 gets Prime 11213 
+Consumer 1 gets Prime 11239 
+Consumer 1 gets Prime 11243 
+Consumer 1 gets Prime 20681 
+Consumer 1 gets Prime 20693 
+Consumer 1 gets Prime 20707 
+Consumer 1 gets Prime 30469 
+Consumer 1 gets Prime 30491 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 155. The system has been running for 8501 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 156. The system has been running for 8502 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 157. The system has been running for 8503 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11251
+Next Prime from producer 1 is 11257
+Next Prime from producer 1 is 11261
+Next Prime from producer 1 is 11273
+Next Prime from producer 1 is 11279
+Performing thread-switch number 158. The system has been running for 8603 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20717
+Next Prime from producer 2 is 20719
+Performing thread-switch number 159. The system has been running for 8703 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30493
+Next Prime from producer 3 is 30497
+Performing thread-switch number 160. The system has been running for 8803 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11251 
+Consumer 1 gets Prime 11257 
+Consumer 1 gets Prime 11261 
+Consumer 1 gets Prime 11273 
+Consumer 1 gets Prime 11279 
+Consumer 1 gets Prime 20717 
+Consumer 1 gets Prime 20719 
+Consumer 1 gets Prime 30493 
+Consumer 1 gets Prime 30497 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 161. The system has been running for 8827 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 162. The system has been running for 8828 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 163. The system has been running for 8829 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11287
+Next Prime from producer 1 is 11299
+Next Prime from producer 1 is 11311
+Next Prime from producer 1 is 11317
+Performing thread-switch number 164. The system has been running for 8929 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20731
+Next Prime from producer 2 is 20743
+Next Prime from producer 2 is 20747
+Performing thread-switch number 165. The system has been running for 9029 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30509
+Performing thread-switch number 166. The system has been running for 9129 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11287 
+Consumer 1 gets Prime 11299 
+Consumer 1 gets Prime 11311 
+Consumer 1 gets Prime 11317 
+Consumer 1 gets Prime 20731 
+Consumer 1 gets Prime 20743 
+Consumer 1 gets Prime 20747 
+Consumer 1 gets Prime 30509 
+#### Thread yielded after using 22 ticks.
+Performing thread-switch number 167. The system has been running for 9151 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 168. The system has been running for 9152 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 169. The system has been running for 9153 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11321
+Next Prime from producer 1 is 11329
+Next Prime from producer 1 is 11351
+Next Prime from producer 1 is 11353
+Next Prime from producer 1 is 11369
+Performing thread-switch number 170. The system has been running for 9253 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20749
+Next Prime from producer 2 is 20753
+Performing thread-switch number 171. The system has been running for 9353 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30517
+Next Prime from producer 3 is 30529
+Performing thread-switch number 172. The system has been running for 9453 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11321 
+Consumer 1 gets Prime 11329 
+Consumer 1 gets Prime 11351 
+Consumer 1 gets Prime 11353 
+Consumer 1 gets Prime 11369 
+Consumer 1 gets Prime 20749 
+Consumer 1 gets Prime 20753 
+Consumer 1 gets Prime 30517 
+Consumer 1 gets Prime 30529 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 173. The system has been running for 9477 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 174. The system has been running for 9478 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 175. The system has been running for 9479 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11383
+Next Prime from producer 1 is 11393
+Next Prime from producer 1 is 11399
+Next Prime from producer 1 is 11411
+Next Prime from producer 1 is 11423
+Performing thread-switch number 176. The system has been running for 9579 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20759
+Next Prime from producer 2 is 20771
+Next Prime from producer 2 is 20773
+Performing thread-switch number 177. The system has been running for 9679 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30539
+Next Prime from producer 3 is 30553
+Performing thread-switch number 178. The system has been running for 9779 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11383 
+Consumer 1 gets Prime 11393 
+Consumer 1 gets Prime 11399 
+Consumer 1 gets Prime 11411 
+Consumer 1 gets Prime 11423 
+Consumer 1 gets Prime 20759 
+Consumer 1 gets Prime 20771 
+Consumer 1 gets Prime 20773 
+Consumer 1 gets Prime 30539 
+Consumer 1 gets Prime 30553 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 179. The system has been running for 9806 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 180. The system has been running for 9807 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 181. The system has been running for 9808 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11437
+Next Prime from producer 1 is 11443
+Next Prime from producer 1 is 11447
+Next Prime from producer 1 is 11467
+Performing thread-switch number 182. The system has been running for 9908 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20789
+Next Prime from producer 2 is 20807
+Next Prime from producer 2 is 20809
+Performing thread-switch number 183. The system has been running for 10008 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30557
+Next Prime from producer 3 is 30559
+Performing thread-switch number 184. The system has been running for 10108 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11437 
+Consumer 1 gets Prime 11443 
+Consumer 1 gets Prime 11447 
+Consumer 1 gets Prime 11467 
+Consumer 1 gets Prime 20789 
+Consumer 1 gets Prime 20807 
+Consumer 1 gets Prime 20809 
+Consumer 1 gets Prime 30557 
+Consumer 1 gets Prime 30559 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 185. The system has been running for 10132 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 186. The system has been running for 10133 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 187. The system has been running for 10134 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11471
+Next Prime from producer 1 is 11483
+Next Prime from producer 1 is 11489
+Next Prime from producer 1 is 11491
+Next Prime from producer 1 is 11497
+Performing thread-switch number 188. The system has been running for 10234 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20849
+Next Prime from producer 2 is 20857
+Performing thread-switch number 189. The system has been running for 10334 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30577
+Next Prime from producer 3 is 30593
+Performing thread-switch number 190. The system has been running for 10434 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11471 
+Consumer 1 gets Prime 11483 
+Consumer 1 gets Prime 11489 
+Consumer 1 gets Prime 11491 
+Consumer 1 gets Prime 11497 
+Consumer 1 gets Prime 20849 
+Consumer 1 gets Prime 20857 
+Consumer 1 gets Prime 30577 
+Consumer 1 gets Prime 30593 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 191. The system has been running for 10458 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 192. The system has been running for 10459 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 193. The system has been running for 10460 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11503
+Next Prime from producer 1 is 11519
+Next Prime from producer 1 is 11527
+Next Prime from producer 1 is 11549
+Next Prime from producer 1 is 11551
+Performing thread-switch number 194. The system has been running for 10560 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20873
+Next Prime from producer 2 is 20879
+Next Prime from producer 2 is 20887
+Performing thread-switch number 195. The system has been running for 10660 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30631
+Performing thread-switch number 196. The system has been running for 10760 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11503 
+Consumer 1 gets Prime 11519 
+Consumer 1 gets Prime 11527 
+Consumer 1 gets Prime 11549 
+Consumer 1 gets Prime 11551 
+Consumer 1 gets Prime 20873 
+Consumer 1 gets Prime 20879 
+Consumer 1 gets Prime 20887 
+Consumer 1 gets Prime 30631 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 197. The system has been running for 10784 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 198. The system has been running for 10785 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 199. The system has been running for 10786 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11579
+Next Prime from producer 1 is 11587
+Next Prime from producer 1 is 11593
+Next Prime from producer 1 is 11597
+Performing thread-switch number 200. The system has been running for 10886 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20897
+Next Prime from producer 2 is 20899
+Performing thread-switch number 201. The system has been running for 10986 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30637
+Next Prime from producer 3 is 30643
+Performing thread-switch number 202. The system has been running for 11086 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11579 
+Consumer 1 gets Prime 11587 
+Consumer 1 gets Prime 11593 
+Consumer 1 gets Prime 11597 
+Consumer 1 gets Prime 20897 
+Consumer 1 gets Prime 20899 
+Consumer 1 gets Prime 30637 
+Consumer 1 gets Prime 30643 
+#### Thread yielded after using 22 ticks.
+Performing thread-switch number 203. The system has been running for 11108 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 204. The system has been running for 11109 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 205. The system has been running for 11110 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11617
+Next Prime from producer 1 is 11621
+Next Prime from producer 1 is 11633
+Next Prime from producer 1 is 11657
+Next Prime from producer 1 is 11677
+Performing thread-switch number 206. The system has been running for 11210 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20903
+Next Prime from producer 2 is 20921
+Next Prime from producer 2 is 20929
+Performing thread-switch number 207. The system has been running for 11310 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30649
+Next Prime from producer 3 is 30661
+Performing thread-switch number 208. The system has been running for 11410 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11617 
+Consumer 1 gets Prime 11621 
+Consumer 1 gets Prime 11633 
+Consumer 1 gets Prime 11657 
+Consumer 1 gets Prime 11677 
+Consumer 1 gets Prime 20903 
+Consumer 1 gets Prime 20921 
+Consumer 1 gets Prime 20929 
+Consumer 1 gets Prime 30649 
+Consumer 1 gets Prime 30661 
+#### Thread yielded after using 27 ticks.
+Performing thread-switch number 209. The system has been running for 11437 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 210. The system has been running for 11438 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 211. The system has been running for 11439 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11681
+Next Prime from producer 1 is 11689
+Next Prime from producer 1 is 11699
+Next Prime from producer 1 is 11701
+Performing thread-switch number 212. The system has been running for 11539 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20939
+Next Prime from producer 2 is 20947
+Performing thread-switch number 213. The system has been running for 11639 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30671
+Next Prime from producer 3 is 30677
+Performing thread-switch number 214. The system has been running for 11739 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11681 
+Consumer 1 gets Prime 11689 
+Consumer 1 gets Prime 11699 
+Consumer 1 gets Prime 11701 
+Consumer 1 gets Prime 20939 
+Consumer 1 gets Prime 20947 
+Consumer 1 gets Prime 30671 
+Consumer 1 gets Prime 30677 
+#### Thread yielded after using 22 ticks.
+Performing thread-switch number 215. The system has been running for 11761 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 216. The system has been running for 11762 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 217. The system has been running for 11763 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11717
+Next Prime from producer 1 is 11719
+Next Prime from producer 1 is 11731
+Next Prime from producer 1 is 11743
+Next Prime from producer 1 is 11777
+Performing thread-switch number 218. The system has been running for 11863 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20959
+Next Prime from producer 2 is 20963
+Next Prime from producer 2 is 20981
+Performing thread-switch number 219. The system has been running for 11963 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30689
+Performing thread-switch number 220. The system has been running for 12063 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11717 
+Consumer 1 gets Prime 11719 
+Consumer 1 gets Prime 11731 
+Consumer 1 gets Prime 11743 
+Consumer 1 gets Prime 11777 
+Consumer 1 gets Prime 20959 
+Consumer 1 gets Prime 20963 
+Consumer 1 gets Prime 20981 
+Consumer 1 gets Prime 30689 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 221. The system has been running for 12087 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 222. The system has been running for 12088 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 223. The system has been running for 12089 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11779
+Next Prime from producer 1 is 11783
+Next Prime from producer 1 is 11789
+Next Prime from producer 1 is 11801
+Performing thread-switch number 224. The system has been running for 12189 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 20983
+Next Prime from producer 2 is 21001
+Next Prime from producer 2 is 21011
+Performing thread-switch number 225. The system has been running for 12289 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30697
+Next Prime from producer 3 is 30703
+Performing thread-switch number 226. The system has been running for 12389 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11779 
+Consumer 1 gets Prime 11783 
+Consumer 1 gets Prime 11789 
+Consumer 1 gets Prime 11801 
+Consumer 1 gets Prime 20983 
+Consumer 1 gets Prime 21001 
+Consumer 1 gets Prime 21011 
+Consumer 1 gets Prime 30697 
+Consumer 1 gets Prime 30703 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 227. The system has been running for 12413 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 228. The system has been running for 12414 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 229. The system has been running for 12415 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11807
+Next Prime from producer 1 is 11813
+Next Prime from producer 1 is 11821
+Next Prime from producer 1 is 11827
+Next Prime from producer 1 is 11831
+Performing thread-switch number 230. The system has been running for 12515 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 21013
+Next Prime from producer 2 is 21017
+Performing thread-switch number 231. The system has been running for 12615 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30707
+Next Prime from producer 3 is 30713
+Performing thread-switch number 232. The system has been running for 12715 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11807 
+Consumer 1 gets Prime 11813 
+Consumer 1 gets Prime 11821 
+Consumer 1 gets Prime 11827 
+Consumer 1 gets Prime 11831 
+Consumer 1 gets Prime 21013 
+Consumer 1 gets Prime 21017 
+Consumer 1 gets Prime 30707 
+Consumer 1 gets Prime 30713 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 233. The system has been running for 12739 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 234. The system has been running for 12740 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 235. The system has been running for 12741 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11833
+Next Prime from producer 1 is 11839
+Next Prime from producer 1 is 11863
+Next Prime from producer 1 is 11867
+Performing thread-switch number 236. The system has been running for 12841 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 21019
+Next Prime from producer 2 is 21023
+Next Prime from producer 2 is 21031
+Performing thread-switch number 237. The system has been running for 12941 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30727
+Next Prime from producer 3 is 30757
+Performing thread-switch number 238. The system has been running for 13041 ticks.
+Switching from thread-ID 3 to thread-ID 4.
+
+Consumer 1 gets Prime 11833 
+Consumer 1 gets Prime 11839 
+Consumer 1 gets Prime 11863 
+Consumer 1 gets Prime 11867 
+Consumer 1 gets Prime 21019 
+Consumer 1 gets Prime 21023 
+Consumer 1 gets Prime 21031 
+Consumer 1 gets Prime 30727 
+Consumer 1 gets Prime 30757 
+#### Thread yielded after using 24 ticks.
+Performing thread-switch number 239. The system has been running for 13065 ticks.
+Switching from thread-ID 4 to thread-ID 5.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 240. The system has been running for 13066 ticks.
+Switching from thread-ID 5 to thread-ID 0.
+
+#### Thread yielded after using 1 tick.
+Performing thread-switch number 241. The system has been running for 13067 ticks.
+Switching from thread-ID 0 to thread-ID 1.
+
+Next Prime from producer 1 is 11887
+Next Prime from producer 1 is 11897
+Next Prime from producer 1 is 11903
+Next Prime from producer 1 is 11909
+Next Prime from producer 1 is 11923
+Performing thread-switch number 242. The system has been running for 13167 ticks.
+Switching from thread-ID 1 to thread-ID 2.
+
+Next Prime from producer 2 is 21059
+Next Prime from producer 2 is 21061
+Performing thread-switch number 243. The system has been running for 13267 ticks.
+Switching from thread-ID 2 to thread-ID 3.
+
+Next Prime from producer 3 is 30763
